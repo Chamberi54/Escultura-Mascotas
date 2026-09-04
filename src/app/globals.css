@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f7f4ee;
+  --paper-dim: #efeae0;
+  --ink: #1f2420;
+  --ink-soft: #2b3129;
+  --verdigris: #0097b2;
+  --verdigris-dark: #00718a;
+  --clay: #9e4624;
+  --gold: #b08d57;
+  --line: rgba(31, 36, 32, 0.14);
+  --line-on-ink: rgba(247, 244, 238, 0.16);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-verdigris: var(--verdigris);
+  --color-verdigris-dark: var(--verdigris-dark);
+  --color-clay: var(--clay);
+  --color-gold: var(--gold);
+  --color-line: var(--line);
+  --color-line-on-ink: var(--line-on-ink);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
+  --font-mono: var(--font-plex-mono);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 26s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 26s linear infinite;
+}
+
+.animate-marquee {
+  animation: marquee-scroll 34s linear infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
