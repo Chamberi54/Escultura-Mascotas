@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
+import { put } from "@vercel/blob";
 import { getStripe } from "@/lib/stripe";
-import { getResend, STUDIO_FROM_EMAIL, STUDIO_ORDER_EMAIL } from "@/lib/resend";
 import { DOG_SHIPPING_OPTIONS, findSizeTier } from "@/lib/pricing";
-import { DELIVERY_TIME_TEXT } from "@/lib/policy";
+import { sendOrderNotification } from "@/lib/notify";
 
 export const runtime = "nodejs";
 
@@ -68,69 +68,67 @@ export async function POST(request: Request) {
     );
   }
 
-  const attachments = await Promise.all(
-    fotos.map(async (file) => ({
-      filename: file.name || "foto.jpg",
-      content: Buffer.from(await file.arrayBuffer()),
-    })),
-  );
-
-  const priceLabel =
-    sizeTier.priceEur != null ? `${sizeTier.priceEur} € + gastos de envío` : "A consultar";
-
-  try {
-    const resend = getResend();
-
-    await resend.emails.send({
-      from: STUDIO_FROM_EMAIL,
-      to: STUDIO_ORDER_EMAIL,
-      replyTo: email,
-      subject: `Nuevo pedido — escultura de mascota (${nombre})`,
-      text: [
-        `Nombre: ${nombre}`,
-        `Email: ${email}`,
-        `Teléfono: ${telefono}`,
-        `Tamaño: ${sizeTier.label} (${priceLabel})`,
-        `Postura: ${postura}`,
-        `Política de encargo y devoluciones aceptada: Sí (${aceptadoEn || "sin fecha registrada"})`,
-        "",
-        "Descripción del cliente:",
-        descripcion || "(sin descripción)",
-      ].join("\n"),
-      attachments,
-    });
-
-    await resend.emails.send({
-      from: STUDIO_FROM_EMAIL,
-      to: email,
-      subject: "Hemos recibido las fotos de tu mascota — Chamberí 54",
-      text: [
-        `Hola ${nombre},`,
-        "",
-        "Hemos recibido tus fotos y los detalles de tu pedido. Nuestro escultor va a estudiarlas para empezar a dar forma a tu pieza.",
-        "",
-        `Tamaño: ${sizeTier.label} (${priceLabel})`,
-        `Postura: ${postura}`,
-        "",
-        sizeTier.priceEur != null
-          ? "En breve recibirás la confirmación del pago si aún no la has completado."
-          : "Como es una pieza de mayor tamaño, te enviaremos un presupuesto a medida en menos de 48 horas.",
-        "",
-        DELIVERY_TIME_TEXT,
-        "",
-        "Gracias por confiar en Chamberí 54.",
-      ].join("\n"),
-    });
-  } catch (error) {
-    console.error("Error enviando el pedido por email", error);
-    return NextResponse.json(
-      { error: "No hemos podido enviar tu pedido. Inténtalo de nuevo en unos minutos." },
-      { status: 502 },
+  // Presupuesto a medida (piezas grandes): no hay pago, se notifica de inmediato.
+  if (sizeTier.priceEur == null) {
+    const attachments = await Promise.all(
+      fotos.map(async (file) => ({
+        filename: file.name || "foto.jpg",
+        content: Buffer.from(await file.arrayBuffer()),
+      })),
     );
+
+    try {
+      await sendOrderNotification(
+        { nombre, email, telefono, postura, descripcion, aceptadoEn, sizeTier },
+        attachments,
+        false,
+      );
+    } catch (error) {
+      console.error("Error enviando la solicitud de presupuesto", error);
+      return NextResponse.json(
+        { error: "No hemos podido enviar tu solicitud. Inténtalo de nuevo en unos minutos." },
+        { status: 502 },
+      );
+    }
+
+    return NextResponse.json({ ok: true, mode: "consulta" as const });
   }
 
-  if (sizeTier.priceEur == null) {
-    return NextResponse.json({ ok: true, mode: "consulta" as const });
+  // Con pago: guardamos fotos y datos, y solo avisamos por email cuando Stripe confirme el pago.
+  let detallesUrl: string;
+  try {
+    const fotoBlobs = await Promise.all(
+      fotos.map((file, i) =>
+        put(`pedidos/${Date.now()}-${i}-${file.name || "foto.jpg"}`, file, {
+          access: "public",
+          addRandomSuffix: true,
+        }),
+      ),
+    );
+
+    const detalles = {
+      nombre,
+      email,
+      telefono,
+      postura,
+      descripcion,
+      aceptadoEn,
+      tamanoId: sizeTier.id,
+      fotos: fotoBlobs.map((blob, i) => ({ url: blob.url, filename: fotos[i].name || "foto.jpg" })),
+    };
+
+    const detallesBlob = await put(
+      `pedidos/${Date.now()}-detalles.json`,
+      JSON.stringify(detalles),
+      { access: "public", addRandomSuffix: true, contentType: "application/json" },
+    );
+    detallesUrl = detallesBlob.url;
+  } catch (error) {
+    console.error("Error subiendo las fotos del pedido", error);
+    return NextResponse.json(
+      { error: "No hemos podido subir las fotos. Inténtalo de nuevo en unos minutos." },
+      { status: 502 },
+    );
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -161,7 +159,7 @@ export async function POST(request: Request) {
           display_name: option.label,
         },
       })),
-      metadata: { nombre, postura, tamano: sizeTier.id },
+      metadata: { nombre, tamano: sizeTier.id, detallesUrl },
       success_url: `${siteUrl}/gracias?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/?estado=cancelado`,
     });
