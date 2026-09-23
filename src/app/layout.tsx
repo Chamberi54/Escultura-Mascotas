@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -73,6 +74,10 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-paper text-ink font-sans antialiased">
         {children}
+        <Script
+          src="https://news.google.com/swg/js/v1/publisher.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

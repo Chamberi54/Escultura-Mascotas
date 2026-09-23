@@ -1,3 +1,5 @@
+import PreferredSourceBadge from "./PreferredSourceBadge";
+
 export default function DogFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-line bg-paper-dim pt-12 pb-8.5">
@@ -28,6 +30,7 @@ export default function DogFooter() {
           >
             Instagram @chamberi_54
           </a>
+          <PreferredSourceBadge />
         </div>
 
         <div className="flex flex-wrap justify-between gap-2.5 border-t border-line pt-6.5 text-[12.5px] text-ink-soft">
