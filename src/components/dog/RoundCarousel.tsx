@@ -38,7 +38,7 @@ export default function RoundCarousel({
   imageWidth = 280,
   imageHeight = 280,
   spacing = 3,
-  speed = 3.5,
+  speed = 1.2,
   direction = "right",
   drag = true,
   sensitivity = 5,
