@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HandDrawnUnderline from "./HandDrawnUnderline";
+import TactileButton from "./TactileButton";
 
 export default function DogHero() {
   return (
@@ -31,19 +32,25 @@ export default function DogHero() {
           gestos— y modelamos una pieza única, numerada, para conservar su
           recuerdo para siempre.
         </p>
-        <div className="reveal mt-9 flex flex-wrap gap-4">
-          <a
+        <div className="reveal mt-9 flex flex-wrap items-start gap-5">
+          <TactileButton
             href="#pedido"
-            className="rounded-sm bg-ink px-7 py-[15px] text-paper transition-all hover:-translate-y-px hover:bg-verdigris-dark"
-          >
-            Enviar las fotos de mi mascota
-          </a>
-          <a
+            label="Enviar las fotos de mi mascota"
+            padding="15px 28px"
+            rounded={100}
+            base={{ color: "#0097B2", depth: 6 }}
+            colors={{ fill: "#1F2420", textColor: "#F7F4EE" }}
+            font={{ fontFamily: "var(--font-inter)", fontSize: "15px", fontWeight: 500 }}
+          />
+          <TactileButton
             href="#galeria"
-            className="rounded-sm border border-ink px-7 py-[15px] transition-colors hover:bg-ink hover:text-paper"
-          >
-            Ver esculturas realizadas
-          </a>
+            label="Ver esculturas realizadas"
+            padding="15px 28px"
+            rounded={100}
+            base={{ color: "#9E4624", depth: 6 }}
+            colors={{ fill: "#F7F4EE", textColor: "#1F2420" }}
+            font={{ fontFamily: "var(--font-inter)", fontSize: "15px", fontWeight: 500 }}
+          />
         </div>
       </div>
     </section>
