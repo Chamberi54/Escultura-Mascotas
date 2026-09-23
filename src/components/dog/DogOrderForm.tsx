@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { DOG_POSES, DOG_SIZE_TIERS, findSizeTier } from "@/lib/pricing";
+import TactileButton from "./TactileButton";
 import {
   DELIVERY_TIME_TEXT,
   ORDER_POLICY_ACCEPT_TEXT,
@@ -196,21 +197,26 @@ export default function DogOrderForm() {
 
       <div className="mb-6">
         <span className={fieldLabel}>Postura</span>
-        <div className="flex flex-wrap gap-3">
-          {DOG_POSES.map((pose) => (
-            <button
-              type="button"
-              key={pose}
-              onClick={() => setPostura(pose)}
-              className={`rounded-full border px-4 py-2 text-[13.5px] transition-colors ${
-                postura === pose
-                  ? "border-ink bg-ink text-paper"
-                  : "border-line text-ink-soft hover:border-ink"
-              }`}
-            >
-              {pose}
-            </button>
-          ))}
+        <div className="flex flex-wrap items-start gap-4">
+          {DOG_POSES.map((pose) => {
+            const isSelected = postura === pose;
+            return (
+              <TactileButton
+                key={pose}
+                label={pose}
+                padding="10px 20px"
+                rounded={100}
+                base={{ color: isSelected ? "#0097B2" : "#D9D4C7", depth: 4 }}
+                colors={
+                  isSelected
+                    ? { fill: "#1F2420", textColor: "#F7F4EE" }
+                    : { fill: "#F7F4EE", textColor: "#1F2420" }
+                }
+                font={{ fontFamily: "var(--font-inter)", fontSize: "13.5px", fontWeight: 500 }}
+                onClick={() => setPostura(pose)}
+              />
+            );
+          })}
         </div>
       </div>
 
