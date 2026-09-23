@@ -189,7 +189,7 @@ export default function TactileButton({
 
   const Tag = href ? "a" : "button";
   const tagSpecificProps = href
-    ? { href }
+    ? { href, onClick }
     : { type, disabled, onClick: disabled ? undefined : onClick };
 
   return (
@@ -224,7 +224,6 @@ export default function TactileButton({
         <Tag
           ref={capRef}
           {...tagSpecificProps}
-          onClick={href ? onClick : undefined}
           onPointerEnter={onEnter}
           onPointerLeave={onLeave}
           onPointerDown={onDown}
