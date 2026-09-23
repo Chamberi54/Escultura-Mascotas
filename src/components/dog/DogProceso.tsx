@@ -107,7 +107,7 @@ export default function DogProceso() {
       <div className="mx-auto max-w-[1180px] px-8">
         <div className="reveal mb-14 flex flex-wrap items-end justify-between gap-8">
           <div>
-            <span className="mb-3.5 block font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
+            <span className="eyebrow-badge mb-3.5 bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
               El proceso
             </span>
             <h2 className="heading-section max-w-[560px] font-display font-[450]">
@@ -131,7 +131,7 @@ export default function DogProceso() {
           {STEPS.map((step, i) => (
             <div
               key={step.title}
-              className={`hover-wiggle tilt-${(i % 4) + 1} w-[78%] shrink-0 snap-center border border-line bg-paper px-8 pt-10 pb-9 shadow-sm select-none sm:w-[46%] lg:w-[31%]`}
+              className={`shadow-soft hover-wiggle tilt-${(i % 4) + 1} w-[78%] shrink-0 snap-center border border-line bg-paper px-8 pt-10 pb-9 select-none sm:w-[46%] lg:w-[31%]`}
             >
               <div className="mb-6.5 h-[48px] w-[48px] text-verdigris-dark">
                 {step.icon}

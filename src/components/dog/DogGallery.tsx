@@ -6,7 +6,7 @@ export default function DogGallery() {
       <div className="mx-auto max-w-[1180px] px-8">
         <div className="reveal mb-14 flex flex-wrap items-end justify-between gap-8">
           <div>
-            <span className="mb-3.5 block font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
+            <span className="eyebrow-badge mb-3.5 bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
               Esculturas ya realizadas
             </span>
             <h2 className="heading-section max-w-[560px] font-display font-[450]">
@@ -21,7 +21,7 @@ export default function DogGallery() {
         </div>
 
         <div className="reveal h-[440px]">
-          <div className="tilt-3 h-full overflow-hidden rounded-sm border border-line shadow-lg">
+          <div className="shadow-soft tilt-3 h-full overflow-hidden rounded-sm border border-line">
             <RoundCarousel />
           </div>
         </div>

@@ -6,7 +6,7 @@ export default function SobreNosotros() {
       <div className="mx-auto max-w-[1180px] px-8">
         <div className="grid grid-cols-1 items-center gap-14 md:grid-cols-2">
           <div className="reveal relative aspect-[3/2] md:order-2">
-            <div className="hover-wiggle tilt-1 relative h-full w-full overflow-hidden rounded-sm border border-line bg-paper shadow-lg">
+            <div className="shadow-soft hover-wiggle tilt-1 relative h-full w-full overflow-hidden rounded-sm border border-line bg-paper">
               <Image
                 src="/about/about-us.jpg"
                 alt="El equipo de Chamberí 54 a la entrada de su taller en Madrid"
@@ -16,7 +16,7 @@ export default function SobreNosotros() {
             </div>
           </div>
           <div className="reveal md:order-1">
-            <span className="mb-3.5 block font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
+            <span className="eyebrow-badge mb-3.5 bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
               Sobre nosotros
             </span>
             <h2 className="heading-section mb-6 font-display font-[450]">

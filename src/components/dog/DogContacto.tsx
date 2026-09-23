@@ -14,7 +14,7 @@ export default function DogContacto() {
         }}
       />
       <div className="reveal relative mx-auto max-w-[640px] px-8 text-center">
-        <span className="mb-3.5 block font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
+        <span className="eyebrow-badge mb-3.5 bg-paper font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
           ¿Tienes dudas?
         </span>
         <h2 className="heading-section-sm mb-4 font-display font-[450]">

@@ -14,7 +14,7 @@ export default function DogHero() {
         className="pointer-events-none absolute top-10 -right-10 hidden rotate-6 rounded-full shadow-lg md:block lg:right-8"
       />
       <div className="mx-auto max-w-[1180px] px-8">
-        <div className="reveal mb-[22px] flex items-center gap-2.5 font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
+        <div className="reveal eyebrow-badge mb-[22px] bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
           <span className="h-1.5 w-1.5 rounded-full bg-clay" />
           Chamberí 54 — Esculturas personalizadas
         </div>
