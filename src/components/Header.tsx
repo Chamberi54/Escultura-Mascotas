@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import TactileButton from "./dog/TactileButton";
 
 const NAV_LINKS = [
   { href: "#sobre-nosotros", label: "Sobre nosotros" },
@@ -42,12 +43,15 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-5">
-          <a
+          <TactileButton
             href="#pedido"
-            className="rounded-sm bg-ink px-5 py-2.5 text-[13.5px] font-medium text-paper transition-colors hover:bg-verdigris-dark"
-          >
-            Encargar mi escultura
-          </a>
+            label="Encargar mi escultura"
+            padding="10px 20px"
+            rounded={100}
+            base={{ color: "#0097B2", depth: 4 }}
+            colors={{ fill: "#1F2420", textColor: "#F7F4EE" }}
+            font={{ fontFamily: "var(--font-inter)", fontSize: "13.5px", fontWeight: 500 }}
+          />
           <button
             aria-label="Abrir menú"
             onClick={() => setMenuOpen((v) => !v)}

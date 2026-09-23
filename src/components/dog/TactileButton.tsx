@@ -40,6 +40,10 @@ export interface TactileButtonProps {
   border?: React.CSSProperties;
   transition?: Transition;
   onClick?: () => void;
+  href?: string;
+  type?: "button" | "submit";
+  disabled?: boolean;
+  fullWidth?: boolean;
   style?: React.CSSProperties;
 }
 
@@ -53,6 +57,10 @@ export default function TactileButton({
   border,
   transition = { type: "spring", mass: 1, delay: 0, damping: 60, stiffness: 800 },
   onClick,
+  href,
+  type = "button",
+  disabled = false,
+  fullWidth = false,
   style,
 }: TactileButtonProps) {
   const fill = colors?.fill ?? "#1F2420";
@@ -86,7 +94,7 @@ export default function TactileButton({
   }, [scope]);
   const radiusPx = radiusFromPercent(radiusBox.w, radiusBox.h, rounded);
 
-  const capRef = useRef<HTMLButtonElement>(null);
+  const capRef = useRef<HTMLButtonElement & HTMLAnchorElement>(null);
   const hovered = useRef(false);
   const pressed = useRef(false);
   const reducedMotion = useReducedMotion();
@@ -138,10 +146,12 @@ export default function TactileButton({
   }, [press]);
 
   const onEnter = () => {
+    if (disabled) return;
     hovered.current = true;
     paint(true, false);
   };
   const onLeave = () => {
+    if (disabled) return;
     hovered.current = false;
     paint(false, false);
     if (pressed.current) {
@@ -150,10 +160,12 @@ export default function TactileButton({
     }
   };
   const onDown = () => {
+    if (disabled) return;
     pressed.current = true;
     press(true, false);
   };
   const onUp = () => {
+    if (disabled) return;
     pressed.current = false;
     press(false, false);
   };
@@ -172,13 +184,20 @@ export default function TactileButton({
     };
   }, [press]);
 
+  const Tag = href ? "a" : "button";
+  const tagSpecificProps = href
+    ? { href }
+    : { type, disabled, onClick: disabled ? undefined : onClick };
+
   return (
     <div
       style={{
-        display: "inline-block",
+        display: fullWidth ? "block" : "inline-block",
+        width: fullWidth ? "100%" : undefined,
         boxSizing: "border-box",
         paddingBottom: Math.max(0, dy),
         paddingRight: Math.max(0, dx),
+        opacity: disabled ? 0.6 : 1,
         ...style,
       }}
     >
@@ -199,10 +218,10 @@ export default function TactileButton({
             pointerEvents: "none",
           }}
         />
-        <button
-          type="button"
+        <Tag
           ref={capRef}
-          onClick={onClick}
+          {...tagSpecificProps}
+          onClick={href ? onClick : undefined}
           onPointerEnter={onEnter}
           onPointerLeave={onLeave}
           onPointerDown={onDown}
@@ -215,18 +234,20 @@ export default function TactileButton({
             borderRadius: radiusPx,
             ...(border ?? {}),
             backgroundColor: fill,
-            cursor: "pointer",
+            textDecoration: "none",
+            cursor: disabled ? "not-allowed" : "pointer",
             boxSizing: "border-box",
             userSelect: "none",
             whiteSpace: "nowrap",
             textAlign: "center",
             WebkitTapHighlightColor: "transparent",
+            border: "none",
             ...fontStyles,
             color: textColor,
           }}
         >
           {label}
-        </button>
+        </Tag>
       </div>
     </div>
   );

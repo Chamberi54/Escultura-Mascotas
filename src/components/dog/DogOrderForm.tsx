@@ -294,17 +294,23 @@ export default function DogOrderForm() {
 
       {errorMsg && <p className="mb-5 text-sm text-clay">{errorMsg}</p>}
 
-      <button
+      <TactileButton
         type="submit"
+        fullWidth
         disabled={status === "submitting"}
-        className="w-full rounded-sm bg-ink py-[15px] font-medium text-paper transition-colors hover:bg-verdigris-dark disabled:opacity-60"
-      >
-        {status === "submitting"
-          ? "Enviando..."
-          : sizeTier?.priceEur != null
-            ? `Continuar al pago — ${sizeTier.priceEur} €`
-            : "Solicitar presupuesto"}
-      </button>
+        label={
+          status === "submitting"
+            ? "Enviando..."
+            : sizeTier?.priceEur != null
+              ? `Continuar al pago — ${sizeTier.priceEur} €`
+              : "Solicitar presupuesto"
+        }
+        padding="15px 28px"
+        rounded={100}
+        base={{ color: "#9E4624", depth: 5 }}
+        colors={{ fill: "#1F2420", textColor: "#F7F4EE" }}
+        font={{ fontFamily: "var(--font-inter)", fontSize: "15px", fontWeight: 500 }}
+      />
       <p className="mt-4 text-center text-xs text-ink-soft">
         Los gastos de envío se calculan en el siguiente paso del pago.
       </p>
