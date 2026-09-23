@@ -90,3 +90,62 @@
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ---------- playful, hand-placed details ---------- */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(var(--tilt, 0deg));
+  }
+  25% {
+    transform: rotate(calc(var(--tilt, 0deg) - 2.5deg));
+  }
+  75% {
+    transform: rotate(calc(var(--tilt, 0deg) + 2.5deg));
+  }
+}
+
+.hover-wiggle {
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.2s ease;
+}
+
+.hover-wiggle:hover {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+.tilt-1 {
+  --tilt: -1.4deg;
+}
+.tilt-2 {
+  --tilt: 1deg;
+}
+.tilt-3 {
+  --tilt: -0.8deg;
+}
+.tilt-4 {
+  --tilt: 1.6deg;
+}
+
+/* fluid, bigger headline scale */
+.heading-hero {
+  font-size: clamp(2.4rem, 1.65rem + 3.2vw, 4.5rem);
+}
+
+.heading-section {
+  font-size: clamp(1.875rem, 1.55rem + 1.4vw, 2.75rem);
+}
+
+.heading-section-sm {
+  font-size: clamp(1.625rem, 1.45rem + 0.8vw, 2.1rem);
+}
+
+.hand-underline path {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  transition: stroke-dashoffset 0.8s ease 0.3s;
+}
+
+.reveal.visible .hand-underline path {
+  stroke-dashoffset: 0;
+}

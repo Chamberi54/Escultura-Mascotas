@@ -17,7 +17,7 @@ export default function DogContacto() {
         <span className="mb-3.5 block font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
           ¿Tienes dudas?
         </span>
-        <h2 className="mb-4 font-display text-[26px] font-[450] md:text-[32px]">
+        <h2 className="heading-section-sm mb-4 font-display font-[450]">
           Escríbenos antes de encargar tu escultura
         </h2>
         <p className="mb-8 text-[15px] text-ink-soft">

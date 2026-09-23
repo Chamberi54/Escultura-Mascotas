@@ -110,7 +110,7 @@ export default function DogProceso() {
             <span className="mb-3.5 block font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
               El proceso
             </span>
-            <h2 className="max-w-[560px] font-display text-[30px] font-[450] md:text-[42px]">
+            <h2 className="heading-section max-w-[560px] font-display font-[450]">
               De la foto a la escultura, en cuatro pasos.
             </h2>
           </div>
@@ -128,10 +128,10 @@ export default function DogProceso() {
           onPointerLeave={onPointerUp}
           className="reveal -mx-8 flex snap-x snap-mandatory gap-6 overflow-x-auto px-8 pb-4 [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
         >
-          {STEPS.map((step) => (
+          {STEPS.map((step, i) => (
             <div
               key={step.title}
-              className="w-[78%] shrink-0 snap-center border border-line bg-paper px-8 pt-10 pb-9 select-none sm:w-[46%] lg:w-[31%]"
+              className={`hover-wiggle tilt-${(i % 4) + 1} w-[78%] shrink-0 snap-center border border-line bg-paper px-8 pt-10 pb-9 shadow-sm select-none sm:w-[46%] lg:w-[31%]`}
             >
               <div className="mb-6.5 h-[48px] w-[48px] text-verdigris-dark">
                 {step.icon}

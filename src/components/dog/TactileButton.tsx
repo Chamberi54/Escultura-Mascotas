@@ -149,6 +149,9 @@ export default function TactileButton({
     if (disabled) return;
     hovered.current = true;
     paint(true, false);
+    if (!reducedMotion) {
+      animate(capRef.current, { rotate: [0, -3, 3, -1.5, 0] }, { duration: 0.4, ease: "easeInOut" });
+    }
   };
   const onLeave = () => {
     if (disabled) return;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HandDrawnUnderline from "./HandDrawnUnderline";
 
 export default function DogHero() {
   return (
@@ -16,9 +17,12 @@ export default function DogHero() {
           <span className="h-1.5 w-1.5 rounded-full bg-clay" />
           Chamberí 54 — Esculturas personalizadas
         </div>
-        <h1 className="reveal max-w-[760px] font-display text-[38px] leading-[1.06] font-[450] tracking-[-0.01em] md:text-[56px]">
+        <h1 className="reveal heading-hero max-w-[760px] font-display leading-[1.06] font-[450] tracking-[-0.01em]">
           Un recuerdo{" "}
-          <span className="font-normal italic">para toda la vida</span>{" "}
+          <span className="relative inline-block font-normal italic">
+            para toda la vida
+            <HandDrawnUnderline />
+          </span>{" "}
           modelado a mano.
         </h1>
         <p className="reveal mt-6 max-w-[560px] text-[17px] text-ink-soft">

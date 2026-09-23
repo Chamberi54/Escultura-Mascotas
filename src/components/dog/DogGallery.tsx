@@ -9,7 +9,7 @@ export default function DogGallery() {
             <span className="mb-3.5 block font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
               Esculturas ya realizadas
             </span>
-            <h2 className="max-w-[560px] font-display text-[30px] font-[450] md:text-[42px]">
+            <h2 className="heading-section max-w-[560px] font-display font-[450]">
               Cada mascota, una pieza distinta.
             </h2>
           </div>
@@ -20,8 +20,10 @@ export default function DogGallery() {
           </p>
         </div>
 
-        <div className="reveal h-[440px] overflow-hidden rounded-sm border border-line">
-          <RoundCarousel />
+        <div className="reveal h-[440px]">
+          <div className="tilt-3 h-full overflow-hidden rounded-sm border border-line shadow-lg">
+            <RoundCarousel />
+          </div>
         </div>
       </div>
     </section>
