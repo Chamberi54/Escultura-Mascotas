@@ -40,6 +40,7 @@ yarn-error.log*
 # local tooling
 .claude/
 .agents/
+.codex/
 skills-lock.json
 
 # typescript
