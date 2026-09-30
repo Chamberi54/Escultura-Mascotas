@@ -5,10 +5,6 @@ import { useState } from "react";
 import TactileButton from "./dog/TactileButton";
 
 const NAV_LINKS = [
-  { href: "/#sobre-nosotros", label: "Sobre nosotros" },
-  { href: "/#proceso", label: "El proceso" },
-  { href: "/#pedido", label: "Encargar" },
-  { href: "/#galeria", label: "Galería" },
   { href: "/team-building", label: "Team building" },
   { href: "/#contacto", label: "Contacto" },
 ];
