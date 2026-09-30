@@ -5,11 +5,12 @@ import { useState } from "react";
 import TactileButton from "./dog/TactileButton";
 
 const NAV_LINKS = [
-  { href: "#sobre-nosotros", label: "Sobre nosotros" },
-  { href: "#proceso", label: "El proceso" },
-  { href: "#pedido", label: "Encargar" },
-  { href: "#galeria", label: "Galería" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#sobre-nosotros", label: "Sobre nosotros" },
+  { href: "/#proceso", label: "El proceso" },
+  { href: "/#pedido", label: "Encargar" },
+  { href: "/#galeria", label: "Galería" },
+  { href: "/team-building", label: "Team building" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export default function Header() {
@@ -44,7 +45,7 @@ export default function Header() {
 
         <div className="flex items-center gap-5">
           <TactileButton
-            href="#pedido"
+            href="/#pedido"
             label="Encargar mi escultura"
             padding="10px 20px"
             rounded={100}
