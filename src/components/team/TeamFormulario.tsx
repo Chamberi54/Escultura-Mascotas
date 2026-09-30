@@ -3,8 +3,6 @@
 import { useState } from "react";
 import TactileButton from "@/components/dog/TactileButton";
 
-const PRICE_PER_PERSON = 40;
-
 const INCLUYE = [
   "Presentación de la actividad",
   "Materiales: arcilla refractaria, herramientas de modelar, pinceles, pintura cerámica, esmalte y delantal desechable",
@@ -32,12 +30,6 @@ export default function TeamFormulario() {
   const [mensaje, setMensaje] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
-
-  const numParticipantes = Number(participantes);
-  const estimado =
-    Number.isFinite(numParticipantes) && numParticipantes > 0
-      ? `${numParticipantes * PRICE_PER_PERSON} €`
-      : null;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -75,7 +67,7 @@ export default function TeamFormulario() {
       <div className="mx-auto max-w-[1180px] px-8">
         <div className="reveal mb-14">
           <span className="eyebrow-badge mb-3.5 bg-paper font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
-            Precio y disponibilidad
+            Información y disponibilidad
           </span>
           <h2 className="heading-section max-w-[560px] font-display font-[450]">
             Organiza el taller de tu equipo.
@@ -84,21 +76,14 @@ export default function TeamFormulario() {
 
         <div className="grid grid-cols-1 gap-[70px] md:grid-cols-2">
           <div className="reveal">
-            <div className="mb-8 flex gap-10">
-              <div>
-                <span className="mb-1 block font-mono text-[10.5px] tracking-[0.08em] text-verdigris-dark uppercase">
-                  Duración
-                </span>
-                <span className="font-display text-[22px] font-[450]">2–3 horas</span>
-              </div>
-              <div>
-                <span className="mb-1 block font-mono text-[10.5px] tracking-[0.08em] text-verdigris-dark uppercase">
-                  Precio
-                </span>
-                <span className="font-display text-[22px] font-[450]">
-                  {PRICE_PER_PERSON} € / persona
-                </span>
-              </div>
+            <div className="mb-8">
+              <span className="mb-1 block font-mono text-[10.5px] tracking-[0.08em] text-verdigris-dark uppercase">
+                Duración
+              </span>
+              <span className="font-display text-[22px] font-[450]">2–3 horas</span>
+              <p className="mt-3 text-[13.5px] text-ink-soft">
+                El precio varía según la actividad, desde 40 € por persona.
+              </p>
             </div>
             <span className={fieldLabel}>Incluye</span>
             <ul className="space-y-3">
@@ -123,9 +108,10 @@ export default function TeamFormulario() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="reveal rounded-sm border border-line bg-paper p-10">
-              <h3 className="mb-2 text-[23px] font-[450]">Solicita tu presupuesto</h3>
+              <h3 className="mb-2 text-[23px] font-[450]">Solicita más información</h3>
               <p className="mb-7.5 text-sm text-ink-soft">
-                Cuéntanos sobre vuestro equipo y os proponemos fecha y formato.
+                Cuéntanos sobre vuestro equipo y os proponemos una actividad,
+                fecha y presupuesto a medida.
               </p>
 
               <div className="mb-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -259,12 +245,10 @@ export default function TeamFormulario() {
                 />
               </div>
 
-              {estimado && (
-                <p className="mb-5 text-[13.5px] text-ink-soft">
-                  Presupuesto estimado: <span className="font-medium text-ink">{estimado}</span>{" "}
-                  ({PRICE_PER_PERSON} € × {participantes} personas)
-                </p>
-              )}
+              <p className="mb-5 text-[13.5px] text-ink-soft">
+                El precio puede variar según la actividad elegida, desde 40 €
+                por persona.
+              </p>
 
               {errorMsg && <p className="mb-5 text-sm text-clay">{errorMsg}</p>}
 
@@ -272,7 +256,7 @@ export default function TeamFormulario() {
                 type="submit"
                 fullWidth
                 disabled={status === "submitting"}
-                label={status === "submitting" ? "Enviando..." : "Solicitar presupuesto"}
+                label={status === "submitting" ? "Enviando..." : "Solicitar más información"}
                 padding="15px 28px"
                 rounded={100}
                 base={{ color: "#9E4624", depth: 5 }}

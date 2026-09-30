@@ -4,7 +4,6 @@ import { getResend, STUDIO_FROM_EMAIL, STUDIO_ORDER_EMAIL } from "@/lib/resend";
 export const runtime = "nodejs";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PRICE_PER_PERSON = 40;
 
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
@@ -36,12 +35,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "El email no es válido." }, { status: 400 });
   }
 
-  const numParticipantes = Number(participantes);
-  const estimado =
-    Number.isFinite(numParticipantes) && numParticipantes > 0
-      ? `${numParticipantes * PRICE_PER_PERSON} €`
-      : "A calcular";
-
   try {
     const resend = getResend();
 
@@ -58,7 +51,7 @@ export async function POST(request: Request) {
         `Número de participantes: ${participantes}`,
         `Formato: ${formato}`,
         `Fecha aproximada: ${fecha || "sin especificar"}`,
-        `Presupuesto estimado (40€/persona): ${estimado}`,
+        "Precio: varía según la actividad, desde 40 €/persona.",
         "",
         "Mensaje:",
         mensaje || "(sin mensaje adicional)",
@@ -72,11 +65,11 @@ export async function POST(request: Request) {
       text: [
         `Hola ${contacto},`,
         "",
-        "Hemos recibido la solicitud de vuestro taller de figuras personalizadas para equipos. Nos pondremos en contacto en menos de 48 horas para confirmar fecha, formato y presupuesto final.",
+        "Hemos recibido la solicitud de vuestro taller de cerámica para equipos. Nos pondremos en contacto en menos de 48 horas para confirmar fecha, formato y presupuesto final.",
         "",
         `Formato: ${formato}`,
         `Participantes: ${participantes}`,
-        `Presupuesto estimado (40€/persona): ${estimado}`,
+        "Precio: varía según la actividad, desde 40 €/persona.",
         "",
         "Gracias por pensar en Chamberí 54 para vuestro equipo.",
       ].join("\n"),

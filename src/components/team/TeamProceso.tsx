@@ -4,26 +4,25 @@ import { useRef, useState } from "react";
 
 const STEPS = [
   {
-    title: "1. Figuras base",
-    description: "Partimos de dos siluetas planas de cerámica: hombre y mujer.",
+    title: "1. Diseñamos la idea",
+    description:
+      "Adaptamos una propuesta a la personalidad de vuestro equipo, pensada para vivir una experiencia de grupo única.",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.3}>
-        <circle cx={22} cy={14} r={6} />
-        <path d="M22 20v24M14 30h16" />
-        <circle cx={42} cy={14} r={6} />
-        <path d="M42 20l-6 24h12l-6-24z" />
+        <path d="M32 10a14 14 0 00-8 25c2 2 3 4 3 7h10c0-3 1-5 3-7a14 14 0 00-8-25z" />
+        <path d="M27 48h10M29 53h6" />
       </svg>
     ),
   },
   {
-    title: "2. Personaliza",
+    title: "2. Preparamos el material",
     description:
-      "Añade los accesorios que más os gusten: peinados, ropa y complementos.",
+      "Preparamos las piezas base y los materiales adaptados a la actividad elegida para vuestro equipo.",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.3}>
-        <path d="M14 44c4-14 10-22 18-22s14 8 18 22" />
-        <circle cx={32} cy={16} r={4} />
-        <path d="M20 44h24" />
+        <rect x={12} y={34} width={34} height={14} rx={2} />
+        <path d="M18 34v-8h10" />
+        <path d="M42 14l8 8-18 18-10 2 2-10z" />
       </svg>
     ),
   },
@@ -133,7 +132,7 @@ export default function TeamProceso() {
               Cómo funciona
             </span>
             <h2 className="heading-section max-w-[560px] font-display font-[450]">
-              De la silueta a la figura terminada, en seis pasos.
+              De la idea a la pieza terminada, en seis pasos.
             </h2>
           </div>
           <p className="max-w-[300px] text-[13.5px] text-ink-soft">

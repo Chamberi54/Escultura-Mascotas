@@ -16,16 +16,15 @@ export default function TeamHero() {
               <span className="font-normal italic">momentos para compartir.</span>
             </h1>
             <p className="mt-6 max-w-[500px] text-[17px] text-ink-soft">
-              Un taller de figuras de cerámica personalizadas, pensado para
-              empresas. Cada participante diseña y decora su propia figura con
-              su nombre, a partir de siluetas base y un montón de accesorios —
-              lo llevamos a vuestra oficina o lo vivís en nuestro taller de
-              Chamberí.
+              Un taller de cerámica pensado para empresas: adaptamos una
+              propuesta a la medida de vuestro equipo para vivir una
+              experiencia de grupo única — lo llevamos a vuestra oficina o lo
+              vivís en nuestro taller de Chamberí.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <TactileButton
                 href="#solicitar"
-                label="Solicitar presupuesto"
+                label="Solicitar más información"
                 padding="15px 28px"
                 rounded={100}
                 base={{ color: "#0097B2", depth: 6 }}
