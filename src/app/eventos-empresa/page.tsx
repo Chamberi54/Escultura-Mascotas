@@ -7,10 +7,42 @@ import TeamFormatos from "@/components/team/TeamFormatos";
 import TeamProceso from "@/components/team/TeamProceso";
 import TeamFormulario from "@/components/team/TeamFormulario";
 
+const title = "Eventos de empresa — Taller de cerámica para equipos | Chamberí 54";
+const description =
+  "Un taller de cerámica para eventos de empresa: adaptamos una propuesta a la medida de vuestro equipo para vivir una experiencia de grupo única. Lo llevamos a vuestra oficina o lo vivís en nuestro taller de Chamberí, Madrid.";
+
 export const metadata: Metadata = {
-  title: "Eventos de empresa — Taller de cerámica para equipos | Chamberí 54",
-  description:
-    "Un taller de cerámica para eventos de empresa: adaptamos una propuesta a la medida de vuestro equipo para vivir una experiencia de grupo única. Lo llevamos a vuestra oficina o lo vivís en nuestro taller de Chamberí, Madrid.",
+  title,
+  description,
+  keywords: [
+    "eventos de empresa Madrid",
+    "team building Madrid",
+    "taller de cerámica para empresas",
+    "actividad para equipos Madrid",
+    "team building cerámica",
+  ],
+  openGraph: {
+    title,
+    description,
+    url: "/eventos-empresa",
+    siteName: "Chamberí 54",
+    locale: "es_ES",
+    type: "website",
+    images: [
+      {
+        url: "/eventos-empresa/taller-equipo.jpeg",
+        width: 1400,
+        height: 2489,
+        alt: "Equipo pintando sus figuras de cerámica personalizadas en un taller de Chamberí 54",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/eventos-empresa/taller-equipo.jpeg"],
+  },
 };
 
 export default function EventosEmpresaPage() {
