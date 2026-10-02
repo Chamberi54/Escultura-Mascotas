@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { href: "/#pedido", label: "Escultura personalizada" },
+  { href: "/", label: "Escultura personalizada" },
   { href: "/eventos-empresa", label: "Eventos de empresa" },
   { href: "/#contacto", label: "Contacto" },
 ];
