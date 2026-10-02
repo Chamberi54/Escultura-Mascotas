@@ -9,7 +9,7 @@ import TeamFormulario from "@/components/team/TeamFormulario";
 
 const title = "Eventos de empresa — Taller de cerámica para equipos | Chamberí 54";
 const description =
-  "Un taller de cerámica para eventos de empresa: adaptamos una propuesta a la medida de vuestro equipo para vivir una experiencia de grupo única. Lo llevamos a vuestra oficina o lo vivís en nuestro taller de Chamberí, Madrid.";
+  "Un taller de cerámica para eventos de empresa: cada propuesta se adapta al equipo para crear una experiencia de grupo única. Se puede celebrar en la oficina o en nuestro taller de Chamberí, Madrid.";
 
 export const metadata: Metadata = {
   title,

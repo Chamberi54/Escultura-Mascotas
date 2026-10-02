@@ -1,8 +1,8 @@
 const FORMATOS = [
   {
-    title: "En vuestra oficina",
+    title: "En la oficina",
     description:
-      "Llevamos todo lo necesario a vuestra oficina: arcilla, pinturas, herramientas y delantales desechables. Solo necesitáis una sala con mesas. Las piezas se cuecen en nuestro horno y os las entregamos en la propia oficina.",
+      "Llevamos todo lo necesario a la oficina: arcilla, pinturas, herramientas y delantales desechables. Solo hace falta una sala con mesas. Las piezas se cuecen en nuestro horno y se entregan en la propia oficina.",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.3}>
         <rect x={10} y={14} width={44} height={36} rx={2} />
@@ -14,7 +14,7 @@ const FORMATOS = [
   {
     title: "En nuestro taller",
     description:
-      "Venís a nuestro taller en el barrio de Chamberí (Madrid) y vivís la experiencia completa en nuestro espacio, rodeados de nuestras piezas, herramientas y el ambiente del estudio.",
+      "La experiencia completa en nuestro espacio del barrio de Chamberí (Madrid), rodeados de nuestras piezas, herramientas y el ambiente del estudio.",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.3}>
         <path d="M10 28L32 10l22 18" />
@@ -34,7 +34,7 @@ export default function TeamFormatos() {
             Dos formatos
           </span>
           <h2 className="heading-section max-w-[600px] font-display font-[450]">
-            Elegís dónde: nos vamos a vuestra oficina, o venís al taller.
+            Dos formas de hacerlo: en la oficina, o en el taller.
           </h2>
         </div>
 

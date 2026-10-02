@@ -6,7 +6,7 @@ const STEPS = [
   {
     title: "1. Diseñamos la idea",
     description:
-      "Adaptamos una propuesta a la personalidad de vuestro equipo, pensada para vivir una experiencia de grupo única.",
+      "Cada propuesta se adapta a la personalidad del equipo, pensada para una experiencia de grupo única.",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.3}>
         <path d="M32 10a14 14 0 00-8 25c2 2 3 4 3 7h10c0-3 1-5 3-7a14 14 0 00-8-25z" />
@@ -17,7 +17,7 @@ const STEPS = [
   {
     title: "2. Preparamos el material",
     description:
-      "Preparamos las piezas base y los materiales adaptados a la actividad elegida para vuestro equipo.",
+      "Preparamos las piezas base y los materiales adaptados a la actividad elegida para el equipo.",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.3}>
         <rect x={12} y={34} width={34} height={14} rx={2} />
@@ -29,7 +29,7 @@ const STEPS = [
   {
     title: "3. Modela y monta",
     description:
-      "Da forma a tu figura con arcilla refractaria y añade los accesorios.",
+      "Se da forma a la figura con arcilla refractaria y se añaden los accesorios.",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.3}>
         <path d="M16 48c0-14 7-26 16-26s16 12 16 26" />
@@ -40,7 +40,7 @@ const STEPS = [
   },
   {
     title: "4. Pinta y decora",
-    description: "Usa pintura cerámica y esmalte para darle color y detalle.",
+    description: "Pintura cerámica y esmalte para darle color y detalle a la pieza.",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.3}>
         <path d="M42 8l14 14-24 24-16 2 2-16z" />
@@ -61,7 +61,7 @@ const STEPS = [
   },
   {
     title: "6. Entrega",
-    description: "Os entregamos las piezas terminadas, listas para disfrutar.",
+    description: "Entrega de las piezas terminadas, listas para disfrutar.",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth={1.3}>
         <rect x={14} y={22} width={36} height={26} rx={1.5} />

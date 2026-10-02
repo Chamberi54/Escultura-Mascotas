@@ -10,7 +10,7 @@ const INCLUYE = [
   "Entrega de las piezas terminadas",
 ];
 
-const FORMATOS = ["En vuestra oficina", "En nuestro taller"] as const;
+const FORMATOS = ["En la oficina", "En nuestro taller"] as const;
 
 const fieldLabel =
   "mb-2 block font-mono text-[10.5px] tracking-[0.08em] text-verdigris-dark uppercase";
@@ -70,7 +70,7 @@ export default function TeamFormulario() {
             Información y disponibilidad
           </span>
           <h2 className="heading-section max-w-[560px] font-display font-[450]">
-            Organiza el taller de tu equipo.
+            Un taller a medida para el equipo.
           </h2>
         </div>
 
@@ -99,19 +99,19 @@ export default function TeamFormulario() {
           {status === "success" ? (
             <div className="reveal rounded-sm border border-line bg-paper p-10 text-center">
               <h3 className="mb-3 font-display text-[23px] font-[450]">
-                ¡Gracias! Hemos recibido vuestra solicitud.
+                ¡Gracias! Hemos recibido la solicitud.
               </h3>
               <p className="text-[15px] text-ink-soft">
-                Os contactaremos en menos de 48 horas para confirmar fecha,
-                formato y presupuesto final.
+                Nos pondremos en contacto en menos de 48 horas para confirmar
+                fecha, formato y presupuesto final.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="reveal rounded-sm border border-line bg-paper p-10">
-              <h3 className="mb-2 text-[23px] font-[450]">Solicita más información</h3>
+              <h3 className="mb-2 text-[23px] font-[450]">Solicitud de información</h3>
               <p className="mb-7.5 text-sm text-ink-soft">
-                Cuéntanos sobre vuestro equipo y os proponemos una actividad,
-                fecha y presupuesto a medida.
+                Con los datos del equipo, se propone una actividad, fecha y
+                presupuesto a medida.
               </p>
 
               <div className="mb-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -139,7 +139,7 @@ export default function TeamFormulario() {
                     required
                     value={contacto}
                     onChange={(e) => setContacto(e.target.value)}
-                    placeholder="Tu nombre"
+                    placeholder="Nombre y apellidos"
                     className={fieldInput}
                   />
                 </div>
@@ -156,7 +156,7 @@ export default function TeamFormulario() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="tucorreo@empresa.com"
+                    placeholder="nombre@empresa.com"
                     className={fieldInput}
                   />
                 </div>
@@ -233,7 +233,7 @@ export default function TeamFormulario() {
 
               <div className="mb-6">
                 <label htmlFor="mensaje" className={fieldLabel}>
-                  Cuéntanos algo más (opcional)
+                  Información adicional (opcional)
                 </label>
                 <textarea
                   id="mensaje"
@@ -264,7 +264,7 @@ export default function TeamFormulario() {
                 font={{ fontFamily: "var(--font-inter)", fontSize: "15px", fontWeight: 500 }}
               />
               <p className="mt-4 text-center text-xs text-ink-soft">
-                Sin compromiso. Os confirmamos disponibilidad por email.
+                Sin compromiso. Confirmación de disponibilidad por email.
               </p>
             </form>
           )}

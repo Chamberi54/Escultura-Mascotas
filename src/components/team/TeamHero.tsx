@@ -16,10 +16,9 @@ export default function TeamHero() {
               <span className="font-normal italic">momentos para compartir.</span>
             </h1>
             <p className="mt-6 max-w-[500px] text-[17px] text-ink-soft">
-              Un taller de cerámica pensado para empresas: adaptamos una
-              propuesta a la medida de vuestro equipo para vivir una
-              experiencia de grupo única — lo llevamos a vuestra oficina o lo
-              vivís en nuestro taller de Chamberí.
+              Un taller de cerámica pensado para empresas: cada propuesta se
+              adapta al equipo para crear una experiencia de grupo única — se
+              puede celebrar en la oficina o en nuestro taller de Chamberí.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <TactileButton

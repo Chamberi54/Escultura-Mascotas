@@ -61,23 +61,23 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: STUDIO_FROM_EMAIL,
       to: email,
-      subject: "Hemos recibido vuestra solicitud de evento de empresa — Chamberí 54",
+      subject: "Hemos recibido la solicitud de evento de empresa — Chamberí 54",
       text: [
         `Hola ${contacto},`,
         "",
-        "Hemos recibido la solicitud de vuestro taller de cerámica para equipos. Nos pondremos en contacto en menos de 48 horas para confirmar fecha, formato y presupuesto final.",
+        "Hemos recibido la solicitud del taller de cerámica para equipos. Nos pondremos en contacto en menos de 48 horas para confirmar fecha, formato y presupuesto final.",
         "",
         `Formato: ${formato}`,
         `Participantes: ${participantes}`,
         "Precio: varía según la actividad, desde 40 €/persona.",
         "",
-        "Gracias por pensar en Chamberí 54 para vuestro equipo.",
+        "Gracias por pensar en Chamberí 54 para el equipo.",
       ].join("\n"),
     });
   } catch (error) {
     console.error("Error enviando la solicitud de evento de empresa", error);
     return NextResponse.json(
-      { error: "No hemos podido enviar tu solicitud. Inténtalo de nuevo en unos minutos." },
+      { error: "No hemos podido enviar la solicitud. Inténtalo de nuevo en unos minutos." },
       { status: 502 },
     );
   }
