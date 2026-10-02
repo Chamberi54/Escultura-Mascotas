@@ -1,7 +1,7 @@
 import Image from "next/image";
-import TactileButton from "./dog/TactileButton";
 
 const NAV_LINKS = [
+  { href: "/#pedido", label: "Escultura personalizada" },
   { href: "/eventos-empresa", label: "Eventos de empresa" },
   { href: "/#contacto", label: "Contacto" },
 ];
@@ -32,15 +32,6 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 h-px w-0 bg-ink transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
-          <TactileButton
-            href="/#pedido"
-            label="Encargar mi escultura"
-            padding="10px 20px"
-            rounded={100}
-            base={{ color: "#0097B2", depth: 4 }}
-            colors={{ fill: "#1F2420", textColor: "#F7F4EE" }}
-            font={{ fontFamily: "var(--font-inter)", fontSize: "13.5px", fontWeight: 500 }}
-          />
         </div>
       </nav>
     </header>
