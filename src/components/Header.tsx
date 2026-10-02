@@ -2,7 +2,7 @@ import Image from "next/image";
 import TactileButton from "./dog/TactileButton";
 
 const NAV_LINKS = [
-  { href: "/team-building", label: "Team building" },
+  { href: "/eventos-empresa", label: "Eventos de empresa" },
   { href: "/#contacto", label: "Contacto" },
 ];
 

@@ -37,7 +37,7 @@ export default function TeamFormulario() {
     setStatus("submitting");
 
     try {
-      const res = await fetch("/api/team-building", {
+      const res = await fetch("/api/eventos-empresa", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

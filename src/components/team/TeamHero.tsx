@@ -9,7 +9,7 @@ export default function TeamHero() {
           <div className="reveal">
             <div className="eyebrow-badge mb-[22px] bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
               <span className="h-1.5 w-1.5 rounded-full bg-clay" />
-              Chamberí 54 — Team building
+              Chamberí 54 — Eventos de empresa
             </div>
             <h1 className="heading-hero max-w-[560px] font-display leading-[1.06] font-[450] tracking-[-0.01em]">
               Creatividad, cerámica y{" "}
@@ -44,7 +44,7 @@ export default function TeamHero() {
           </div>
           <div className="reveal relative aspect-[4/5] overflow-hidden rounded-sm border border-line shadow-soft">
             <Image
-              src="/team-building/taller-equipo.jpeg"
+              src="/eventos-empresa/taller-equipo.jpeg"
               alt="Equipo pintando sus figuras de cerámica personalizadas en un taller de Chamberí 54"
               fill
               className="object-cover"

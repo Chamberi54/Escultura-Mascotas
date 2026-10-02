@@ -42,7 +42,7 @@ export async function POST(request: Request) {
       from: STUDIO_FROM_EMAIL,
       to: STUDIO_ORDER_EMAIL,
       replyTo: email,
-      subject: `Nueva solicitud de team building — ${empresa}`,
+      subject: `Nueva solicitud de evento de empresa — ${empresa}`,
       text: [
         `Empresa: ${empresa}`,
         `Persona de contacto: ${contacto}`,
@@ -61,7 +61,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: STUDIO_FROM_EMAIL,
       to: email,
-      subject: "Hemos recibido vuestra solicitud de team building — Chamberí 54",
+      subject: "Hemos recibido vuestra solicitud de evento de empresa — Chamberí 54",
       text: [
         `Hola ${contacto},`,
         "",
@@ -75,7 +75,7 @@ export async function POST(request: Request) {
       ].join("\n"),
     });
   } catch (error) {
-    console.error("Error enviando la solicitud de team building", error);
+    console.error("Error enviando la solicitud de evento de empresa", error);
     return NextResponse.json(
       { error: "No hemos podido enviar tu solicitud. Inténtalo de nuevo en unos minutos." },
       { status: 502 },

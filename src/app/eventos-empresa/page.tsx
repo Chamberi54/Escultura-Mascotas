@@ -8,12 +8,12 @@ import TeamProceso from "@/components/team/TeamProceso";
 import TeamFormulario from "@/components/team/TeamFormulario";
 
 export const metadata: Metadata = {
-  title: "Team building — Taller de figuras personalizadas | Chamberí 54",
+  title: "Eventos de empresa — Taller de cerámica para equipos | Chamberí 54",
   description:
-    "Un taller de cerámica para empresas: cada participante diseña y pinta su propia figura personalizada. Lo llevamos a vuestra oficina o lo vivís en nuestro taller de Chamberí, Madrid.",
+    "Un taller de cerámica para eventos de empresa: adaptamos una propuesta a la medida de vuestro equipo para vivir una experiencia de grupo única. Lo llevamos a vuestra oficina o lo vivís en nuestro taller de Chamberí, Madrid.",
 };
 
-export default function TeamBuildingPage() {
+export default function EventosEmpresaPage() {
   return (
     <>
       <RevealObserver />
