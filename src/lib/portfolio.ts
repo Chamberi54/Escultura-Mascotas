@@ -62,6 +62,8 @@ export const ARTE: PortfolioPiece[] = [
   { title: "Aguadora", image: "/portfolio/arte/aguadora.jpg" },
   { title: "Figura religiosa", image: "/portfolio/arte/figura-religiosa.jpg" },
   { title: "Busto", image: "/portfolio/arte/busto.jpg" },
+  { title: "Figura aventurero", image: "/portfolio/arte/figura-aventurero.jpg" },
+  { title: "Robot y perro", image: "/portfolio/arte/robot-y-perro.jpg" },
 ];
 
 export type PortfolioCategory = {
@@ -100,6 +102,6 @@ export const CATEGORIES: PortfolioCategory[] = [
     slug: "arte",
     title: "Arte personalizado",
     description: "Figuras y bustos de cerámica para encargos únicos.",
-    image: "/portfolio/arte/aguadora.jpg",
+    image: "/portfolio/arte/conjunto-arte.jpg",
   },
 ];

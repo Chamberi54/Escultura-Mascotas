@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/portfolio/arte/aguadora.jpg",
-        width: 1254,
-        height: 1254,
-        alt: "Figura de cerámica personalizada — Chamberí 54",
+        url: "/portfolio/arte/conjunto-arte.jpg",
+        width: 1400,
+        height: 933,
+        alt: "Figuras de cerámica personalizadas — Chamberí 54",
       },
     ],
   },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/portfolio/arte/aguadora.jpg"],
+    images: ["/portfolio/arte/conjunto-arte.jpg"],
   },
 };
 
@@ -53,7 +53,7 @@ export default function ArteCatalogoPage() {
 
             <SectionBanner
               title="Arte personalizado"
-              image="/portfolio/arte/aguadora.jpg"
+              image="/portfolio/arte/conjunto-arte.jpg"
               level="h1"
             />
             <PieceGrid pieces={ARTE} />
