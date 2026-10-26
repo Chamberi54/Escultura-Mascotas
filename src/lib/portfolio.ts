@@ -47,6 +47,23 @@ export const DECORACION: PortfolioPiece[] = [
   { title: "Galgo carbón", image: "/portfolio/decoracion/galgo-carbon.jpg" },
 ];
 
+export const MASCOTAS: PortfolioPiece[] = [
+  { title: "Pastor alemán", image: "/portfolio/mascotas/pastor-aleman.jpg" },
+  { title: "Terrier escocés", image: "/portfolio/mascotas/terrier-escoces.jpg" },
+  { title: "Lobo", image: "/portfolio/mascotas/lobo.jpg" },
+  { title: "Bóxer", image: "/portfolio/mascotas/boxer.jpg" },
+  { title: "Perro león", image: "/portfolio/mascotas/perro-leon.jpg" },
+  { title: "Bulldog", image: "/portfolio/mascotas/bulldog.jpg" },
+  { title: "Chihuahua", image: "/portfolio/mascotas/chihuahua.jpg" },
+  { title: "Airedale terrier", image: "/portfolio/mascotas/airedale.jpg" },
+];
+
+export const ARTE: PortfolioPiece[] = [
+  { title: "Aguadora", image: "/portfolio/arte/aguadora.jpg" },
+  { title: "Figura religiosa", image: "/portfolio/arte/figura-religiosa.jpg" },
+  { title: "Busto", image: "/portfolio/arte/busto.jpg" },
+];
+
 export type PortfolioCategory = {
   slug: string;
   title: string;
@@ -72,5 +89,17 @@ export const CATEGORIES: PortfolioCategory[] = [
     title: "Decoración",
     description: "Figuras y esculturas de cerámica para decorar.",
     image: "/portfolio/decoracion/conjunto-decoracion.jpg",
+  },
+  {
+    slug: "mascotas",
+    title: "Mascotas personalizadas",
+    description: "Figuras de mascotas en cerámica, inspiradas en razas y posturas favoritas.",
+    image: "/portfolio/mascotas/conjunto-mascotas.jpg",
+  },
+  {
+    slug: "arte",
+    title: "Arte personalizado",
+    description: "Figuras y bustos de cerámica para encargos únicos.",
+    image: "/portfolio/arte/aguadora.jpg",
   },
 ];
