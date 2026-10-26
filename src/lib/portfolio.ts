@@ -42,7 +42,6 @@ export const DECORACION: PortfolioPiece[] = [
   { title: "Figura floral", image: "/portfolio/decoracion/figura-floral.jpg" },
   { title: "Salchicha roja", image: "/portfolio/decoracion/salchicha-roja.jpg" },
   { title: "Salchicha jaspeada", image: "/portfolio/decoracion/salchicha-jaspeada.jpg" },
-  { title: "Colección de galgos", image: "/portfolio/decoracion/galgos-coleccion.jpg" },
   { title: "Galgo crema", image: "/portfolio/decoracion/galgo-crema.jpg" },
   { title: "Salchicha moteada", image: "/portfolio/decoracion/salchicha-moteada.jpg" },
   { title: "Galgo carbón", image: "/portfolio/decoracion/galgo-carbon.jpg" },
