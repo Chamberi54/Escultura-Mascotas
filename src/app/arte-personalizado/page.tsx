@@ -53,10 +53,9 @@ export default function ArtePersonalizadoPage() {
                   Hagamos tu idea realidad.
                 </h1>
                 <p className="mt-6 max-w-[460px] text-[17px] text-ink-soft">
-                  Si hay una pieza que no encaja en mascotas, joyería, hogar o
-                  decoración, se puede modelar igualmente a mano en el taller
-                  de Chamberí. Con la descripción de la idea, se propone una
-                  pieza y un presupuesto a medida.
+                  Para una idea única que llevar a cabo, basta con
+                  describirla. Nos ponemos en contacto para asesorar sobre la
+                  pieza más adecuada y proponer un presupuesto a medida.
                 </p>
               </div>
 
