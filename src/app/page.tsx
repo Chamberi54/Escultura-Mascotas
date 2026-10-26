@@ -57,9 +57,14 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="flex flex-wrap justify-center gap-10">
               {CATEGORIES.map((category) => (
-                <CategoryCard key={category.slug} category={category} />
+                <div
+                  key={category.slug}
+                  className="w-full sm:w-[calc((100%-40px)/2)] lg:w-[calc((100%-80px)/3)]"
+                >
+                  <CategoryCard category={category} />
+                </div>
               ))}
             </div>
           </div>
