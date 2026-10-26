@@ -5,7 +5,7 @@ import PortfolioBook from "@/components/portfolio/PortfolioBook";
 
 const title = "Portfolio — Chamberí 54";
 const description =
-  "Un recorrido pieza a pieza por las esculturas de mascotas hechas a mano en nuestro taller de Chamberí, Madrid.";
+  "Un recorrido pieza a pieza por nuestra joyería, piezas para el hogar y decoración, hechas a mano en nuestro taller de Chamberí, Madrid.";
 
 export const metadata: Metadata = {
   title,
@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/gallery/mascotas/pieza-01-airedale-sentado.png",
-        width: 1024,
-        height: 1024,
-        alt: "Escultura de mascota hecha a mano — Chamberí 54",
+        url: "/portfolio/joyeria/conjunto-broches.jpg",
+        width: 1400,
+        height: 933,
+        alt: "Broches de cerámica hechos a mano — Chamberí 54",
       },
     ],
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/gallery/mascotas/pieza-01-airedale-sentado.png"],
+    images: ["/portfolio/joyeria/conjunto-broches.jpg"],
   },
 };
 
