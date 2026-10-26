@@ -23,19 +23,20 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.chamberi54.com";
-const title = "Chamberí 54 — Esculturas de mascotas hechas a mano";
+const title = "Chamberí 54 — Piezas de cerámica hechas a mano";
 const description =
-  "Envíanos las fotos de tu mascota y modelamos a mano su escultura, en el barrio de Chamberí, Madrid.";
+  "Joyería, piezas para el hogar, decoración y esculturas de mascotas personalizadas, hechas a mano en nuestro taller de Chamberí, Madrid.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
   keywords: [
+    "cerámica hecha a mano Madrid",
     "escultura de mascotas",
     "escultura personalizada",
-    "regalo mascota",
-    "escultura de perro",
+    "joyería de cerámica",
+    "regalo personalizado Madrid",
     "taller Chamberí Madrid",
   ],
   openGraph: {
@@ -47,10 +48,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/gallery/mascotas/pieza-01-airedale-sentado.png",
-        width: 1024,
-        height: 1024,
-        alt: "Escultura de mascota hecha a mano — Chamberí 54",
+        url: "/portfolio/joyeria/conjunto-broches.jpg",
+        width: 1400,
+        height: 933,
+        alt: "Broches de cerámica hechos a mano — Chamberí 54",
       },
     ],
   },
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/gallery/mascotas/pieza-01-airedale-sentado.png"],
+    images: ["/portfolio/joyeria/conjunto-broches.jpg"],
   },
 };
 

@@ -13,12 +13,32 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/portfolio",
-        destination: "/nuestras-obras",
+        destination: "/",
         permanent: true,
       },
       {
         source: "/portfolio/:slug",
-        destination: "/nuestras-obras/:slug",
+        destination: "/:slug",
+        permanent: true,
+      },
+      {
+        source: "/nuestras-obras",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/nuestras-obras/:slug",
+        destination: "/:slug",
+        permanent: true,
+      },
+      {
+        source: "/esculturas-personalizadas",
+        destination: "/mascotas-personalizadas",
+        permanent: true,
+      },
+      {
+        source: "/esculturas-personalizadas/a-medida",
+        destination: "/arte-personalizado",
         permanent: true,
       },
     ];

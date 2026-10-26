@@ -1,10 +1,11 @@
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { href: "/esculturas-personalizadas", label: "Esculturas personalizadas" },
+  { href: "/mascotas-personalizadas", label: "Mascotas personalizadas" },
+  { href: "/arte-personalizado", label: "Arte personalizado" },
   { href: "/eventos-empresa", label: "Eventos de empresa" },
-  { href: "/nuestras-obras", label: "Nuestras obras" },
-  { href: "/#contacto", label: "Contacto" },
+  { href: "/mascotas-personalizadas#contacto", label: "Contacto" },
+  { href: "/mascotas-personalizadas#sobre-nosotros", label: "Sobre nosotros" },
 ];
 
 export default function Header() {

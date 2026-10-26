@@ -161,7 +161,7 @@ export async function POST(request: Request) {
       })),
       metadata: { nombre, tamano: sizeTier.id, detallesUrl },
       success_url: `${siteUrl}/gracias?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${siteUrl}/?estado=cancelado`,
+      cancel_url: `${siteUrl}/mascotas-personalizadas?estado=cancelado`,
     });
 
     return NextResponse.json({ ok: true, mode: "pago" as const, url: session.url });

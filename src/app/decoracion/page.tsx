@@ -4,11 +4,11 @@ import DogFooter from "@/components/dog/DogFooter";
 import BackLink from "@/components/portfolio/BackLink";
 import SectionBanner from "@/components/portfolio/SectionBanner";
 import PieceGrid from "@/components/portfolio/PieceGrid";
-import { HOGAR } from "@/lib/portfolio";
+import { DECORACION } from "@/lib/portfolio";
 
-const title = "Hogar — Nuestras obras | Chamberí 54";
+const title = "Decoración — Chamberí 54";
 const description =
-  "Jarrones, macetas y piezas de cerámica para el hogar, hechas a mano en nuestro taller de Chamberí, Madrid.";
+  "Figuras y esculturas de cerámica para decorar, hechas a mano en nuestro taller de Chamberí, Madrid.";
 
 export const metadata: Metadata = {
   title,
@@ -16,16 +16,16 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: "/nuestras-obras/hogar",
+    url: "/decoracion",
     siteName: "Chamberí 54",
     locale: "es_ES",
     type: "website",
     images: [
       {
-        url: "/portfolio/hogar/conjunto-hogar.jpg",
-        width: 1254,
-        height: 1254,
-        alt: "Piezas de cerámica para el hogar — Chamberí 54",
+        url: "/portfolio/decoracion/conjunto-decoracion.jpg",
+        width: 1400,
+        height: 933,
+        alt: "Figuras de cerámica decorativas — Chamberí 54",
       },
     ],
   },
@@ -33,11 +33,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/portfolio/hogar/conjunto-hogar.jpg"],
+    images: ["/portfolio/decoracion/conjunto-decoracion.jpg"],
   },
 };
 
-export default function HogarPage() {
+export default function DecoracionPage() {
   return (
     <>
       <Header />
@@ -47,12 +47,16 @@ export default function HogarPage() {
             <BackLink />
             <div className="mt-6 mb-7 text-center">
               <span className="eyebrow-badge bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
-                Nuestras obras
+                Chamberí 54
               </span>
             </div>
 
-            <SectionBanner title="Hogar" image="/portfolio/hogar/conjunto-hogar.jpg" level="h1" />
-            <PieceGrid pieces={HOGAR} />
+            <SectionBanner
+              title="Decoración"
+              image="/portfolio/decoracion/conjunto-decoracion.jpg"
+              level="h1"
+            />
+            <PieceGrid pieces={DECORACION} />
           </div>
         </section>
       </main>

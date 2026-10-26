@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
+import BackLink from "@/components/portfolio/BackLink";
 import IdeaFormulario from "@/components/esculturas/IdeaFormulario";
 
-const title = "Hagamos tu idea realidad — Chamberí 54";
+const title = "Arte personalizado — Chamberí 54";
 const description =
   "Cuéntanos tu idea y la modelamos en cerámica, a medida, en nuestro taller de Chamberí, Madrid.";
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: "/esculturas-personalizadas/a-medida",
+    url: "/arte-personalizado",
     siteName: "Chamberí 54",
     locale: "es_ES",
     type: "website",
@@ -35,24 +35,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function IdeaPersonalizadaPage() {
+export default function ArtePersonalizadoPage() {
   return (
     <>
       <Header />
       <main>
         <section className="py-20">
           <div className="mx-auto max-w-[1180px] px-8">
-            <Link
-              href="/esculturas-personalizadas"
-              className="font-mono text-xs tracking-[0.1em] text-ink-soft uppercase transition-colors hover:text-ink"
-            >
-              ← Esculturas personalizadas
-            </Link>
+            <BackLink />
 
             <div className="mt-10 grid grid-cols-1 items-start gap-16 md:grid-cols-2">
               <div>
                 <span className="eyebrow-badge mb-5 bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
-                  Chamberí 54
+                  Arte personalizado
                 </span>
                 <h1 className="heading-hero font-display font-[450] tracking-[-0.01em]">
                   Hagamos tu idea realidad.

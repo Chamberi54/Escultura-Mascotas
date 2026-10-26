@@ -1,44 +1,70 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
-import RevealObserver from "@/components/RevealObserver";
-import DogHero from "@/components/dog/DogHero";
-import SobreNosotros from "@/components/dog/SobreNosotros";
-import DogProceso from "@/components/dog/DogProceso";
-import DogPedido from "@/components/dog/DogPedido";
-import DogGallery from "@/components/dog/DogGallery";
-import DogContacto from "@/components/dog/DogContacto";
 import DogFooter from "@/components/dog/DogFooter";
+import CategoryCard from "@/components/portfolio/CategoryCard";
+import { CATEGORIES } from "@/lib/portfolio";
+
+const title = "Chamberí 54 — Piezas de cerámica hechas a mano";
+const description =
+  "Joyería, piezas para el hogar y decoración de cerámica hechas a mano en nuestro taller de Chamberí, Madrid. El detalle perfecto para bodas, comuniones y regalos personalizados.";
 
 export const metadata: Metadata = {
-  title: "Esculturas de mascotas hechas a mano — Chamberí 54",
-  description:
-    "Envíanos las fotos de tu mascota y modelamos a mano su escultura: elige la postura, tumbado, sentado o de pie, y recíbela en casa.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: "/",
+    siteName: "Chamberí 54",
+    locale: "es_ES",
+    type: "website",
+    images: [
+      {
+        url: "/portfolio/joyeria/conjunto-broches.jpg",
+        width: 1400,
+        height: 933,
+        alt: "Broches de cerámica hechos a mano — Chamberí 54",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/portfolio/joyeria/conjunto-broches.jpg"],
+  },
 };
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{ estado?: string }>;
-}) {
-  const { estado } = await searchParams;
-
+export default function HomePage() {
   return (
     <>
-      <RevealObserver />
       <Header />
       <main>
-        {estado === "cancelado" && (
-          <div className="border-b border-line bg-paper-dim px-8 py-3 text-center text-[14px] text-ink-soft">
-            Has cancelado el pago. Tu pedido no se ha completado — puedes
-            volver a intentarlo cuando quieras.
+        <section className="py-24">
+          <div className="mx-auto max-w-[1180px] px-8">
+            <div className="mb-14 text-center">
+              <span className="eyebrow-badge mb-5 bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
+                <span className="h-1.5 w-1.5 rounded-full bg-clay" />
+                Taller de cerámica — Madrid
+              </span>
+              <h1 className="heading-hero max-w-[640px] mx-auto font-display font-[450] tracking-[-0.01em]">
+                Chamberí 54
+              </h1>
+              <p className="mt-5 mx-auto max-w-[560px] text-[17px] text-ink-soft">
+                Piezas únicas hechas a mano en el corazón de Chamberí:
+                joyería, piezas para el hogar y arte en cerámica, pensadas
+                para regalar o para conservar. El detalle perfecto para
+                bodas, comuniones y otras celebraciones.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              {CATEGORIES.map((category) => (
+                <CategoryCard key={category.slug} category={category} />
+              ))}
+            </div>
           </div>
-        )}
-        <DogHero />
-        <SobreNosotros />
-        <DogProceso />
-        <DogPedido />
-        <DogGallery />
-        <DogContacto />
+        </section>
       </main>
       <DogFooter />
     </>

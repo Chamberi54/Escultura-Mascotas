@@ -4,7 +4,7 @@ import type { PortfolioCategory } from "@/lib/portfolio";
 
 export default function CategoryCard({ category }: { category: PortfolioCategory }) {
   return (
-    <Link href={`/nuestras-obras/${category.slug}`} className="group block">
+    <Link href={`/${category.slug}`} className="group block">
       <div className="shadow-soft relative aspect-[4/3] overflow-hidden rounded-sm border border-line">
         <Image
           src={category.image}

@@ -11,46 +11,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${siteUrl}/mascotas-personalizadas`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/arte-personalizado`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${siteUrl}/eventos-empresa`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/esculturas-personalizadas`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/esculturas-personalizadas/a-medida`,
+      url: `${siteUrl}/joyeria`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: `${siteUrl}/nuestras-obras`,
+      url: `${siteUrl}/hogar`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: `${siteUrl}/nuestras-obras/joyeria`,
+      url: `${siteUrl}/decoracion`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: `${siteUrl}/nuestras-obras/hogar`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: `${siteUrl}/nuestras-obras/decoracion`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
+      priority: 0.6,
     },
   ];
 }

@@ -16,7 +16,7 @@ export default function DogHero() {
       <div className="mx-auto max-w-[1180px] px-8">
         <div className="reveal eyebrow-badge mb-[22px] bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
           <span className="h-1.5 w-1.5 rounded-full bg-clay" />
-          Chamberí 54 — Esculturas personalizadas
+          Chamberí 54 — Mascotas personalizadas
         </div>
         <h1 className="reveal heading-hero max-w-[760px] font-display leading-[1.06] font-[450] tracking-[-0.01em]">
           Un recuerdo{" "}
