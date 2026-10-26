@@ -52,7 +52,6 @@ export type PortfolioCategory = {
   title: string;
   description: string;
   image: string;
-  count: number;
 };
 
 export const CATEGORIES: PortfolioCategory[] = [
@@ -61,20 +60,17 @@ export const CATEGORIES: PortfolioCategory[] = [
     title: "Joyería",
     description: "Broches y pendientes de cerámica, esmaltados a mano.",
     image: "/portfolio/joyeria/conjunto-broches.jpg",
-    count: BROCHES.length + PENDIENTES.length,
   },
   {
     slug: "hogar",
     title: "Hogar",
     description: "Jarrones, macetas y piezas para el día a día.",
     image: "/portfolio/hogar/conjunto-hogar.jpg",
-    count: HOGAR.length,
   },
   {
     slug: "decoracion",
     title: "Decoración",
     description: "Figuras y esculturas de cerámica para decorar.",
     image: "/portfolio/decoracion/conjunto-decoracion.jpg",
-    count: DECORACION.length,
   },
 ];

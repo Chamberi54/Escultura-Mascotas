@@ -6,7 +6,7 @@ import SectionBanner from "@/components/portfolio/SectionBanner";
 import PieceGrid from "@/components/portfolio/PieceGrid";
 import { HOGAR } from "@/lib/portfolio";
 
-const title = "Hogar — Portfolio | Chamberí 54";
+const title = "Hogar — Nuestras obras | Chamberí 54";
 const description =
   "Jarrones, macetas y piezas de cerámica para el hogar, hechas a mano en nuestro taller de Chamberí, Madrid.";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: "/portfolio/hogar",
+    url: "/nuestras-obras/hogar",
     siteName: "Chamberí 54",
     locale: "es_ES",
     type: "website",
@@ -47,7 +47,7 @@ export default function HogarPage() {
             <BackLink />
             <div className="mt-6 mb-7 text-center">
               <span className="eyebrow-badge bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
-                Portfolio
+                Nuestras obras
               </span>
             </div>
 

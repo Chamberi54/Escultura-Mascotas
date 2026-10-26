@@ -11,6 +11,16 @@ const nextConfig: NextConfig = {
         destination: "/eventos-empresa",
         permanent: true,
       },
+      {
+        source: "/portfolio",
+        destination: "/nuestras-obras",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/:slug",
+        destination: "/nuestras-obras/:slug",
+        permanent: true,
+      },
     ];
   },
 };

@@ -4,7 +4,7 @@ import DogFooter from "@/components/dog/DogFooter";
 import CategoryCard from "@/components/portfolio/CategoryCard";
 import { CATEGORIES } from "@/lib/portfolio";
 
-const title = "Portfolio — Chamberí 54";
+const title = "Nuestras obras — Chamberí 54";
 const description =
   "Joyería, piezas para el hogar y decoración, hechas a mano en nuestro taller de Chamberí, Madrid.";
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: "/portfolio",
+    url: "/nuestras-obras",
     siteName: "Chamberí 54",
     locale: "es_ES",
     type: "website",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PortfolioPage() {
+export default function NuestrasObrasPage() {
   return (
     <>
       <Header />
@@ -45,10 +45,10 @@ export default function PortfolioPage() {
             <div className="mb-14 text-center">
               <span className="eyebrow-badge mb-5 bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
                 <span className="h-1.5 w-1.5 rounded-full bg-clay" />
-                Chamberí 54 — Portfolio
+                Chamberí 54
               </span>
               <h1 className="heading-hero max-w-[640px] mx-auto font-display font-[450] tracking-[-0.01em]">
-                Nuestras piezas, por categoría.
+                Nuestras obras
               </h1>
               <p className="mt-5 mx-auto max-w-[520px] text-[17px] text-ink-soft">
                 Joyería, piezas para el hogar y decoración, modeladas y
