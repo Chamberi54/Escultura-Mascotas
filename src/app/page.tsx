@@ -44,7 +44,7 @@ export default function HomePage() {
         <section className="py-24">
           <div className="mx-auto max-w-[1180px] px-8">
             <div className="mb-14 text-center">
-              <h1 className="mx-auto max-w-[640px]">
+              <h1 className="w-full">
                 <Image
                   src="/logo/chamberi54-banner.jpg"
                   alt="Chamberí 54 — Concept Store"
