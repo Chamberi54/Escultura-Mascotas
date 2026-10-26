@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
 import CategoryCard from "@/components/portfolio/CategoryCard";
@@ -43,12 +44,15 @@ export default function HomePage() {
         <section className="py-24">
           <div className="mx-auto max-w-[1180px] px-8">
             <div className="mb-14 text-center">
-              <span className="eyebrow-badge mb-5 bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
-                <span className="h-1.5 w-1.5 rounded-full bg-clay" />
-                Taller de cerámica — Madrid
-              </span>
-              <h1 className="heading-hero max-w-[640px] mx-auto font-display font-[450] tracking-[-0.01em]">
-                Chamberí 54
+              <h1 className="mx-auto max-w-[640px]">
+                <Image
+                  src="/logo/chamberi54-banner.jpg"
+                  alt="Chamberí 54 — Concept Store"
+                  width={1400}
+                  height={467}
+                  className="h-auto w-full rounded-sm"
+                  priority
+                />
               </h1>
               <p className="mt-5 mx-auto max-w-[560px] text-[17px] text-ink-soft">
                 Piezas únicas hechas a mano en el corazón de Chamberí:
