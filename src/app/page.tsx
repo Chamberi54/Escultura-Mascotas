@@ -52,9 +52,8 @@ export default function HomePage() {
               </h1>
               <p className="mt-5 mx-auto max-w-[560px] text-[17px] text-ink-soft">
                 Piezas únicas hechas a mano en el corazón de Chamberí:
-                joyería, piezas para el hogar y arte en cerámica, pensadas
-                para regalar o para conservar. El detalle perfecto para
-                bodas, comuniones y otras celebraciones.
+                joyería, piezas para el hogar y arte en cerámica. El detalle
+                perfecto para bodas, comuniones y otras celebraciones.
               </p>
             </div>
 
