@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import RevealObserver from "@/components/RevealObserver";
 import DogHero from "@/components/dog/DogHero";
-import SobreNosotros from "@/components/dog/SobreNosotros";
 import DogProceso from "@/components/dog/DogProceso";
 import DogPedido from "@/components/dog/DogPedido";
 import DogGallery from "@/components/dog/DogGallery";
@@ -34,7 +33,6 @@ export default async function MascotasPersonalizadasPage({
           </div>
         )}
         <DogHero />
-        <SobreNosotros />
         <DogProceso />
         <DogPedido />
         <DogGallery />
