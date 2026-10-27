@@ -35,24 +35,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function LetrasPersonalizadasPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ estado?: string }>;
-}) {
-  const { estado } = await searchParams;
-
+export default function LetrasPersonalizadasPage() {
   return (
     <>
       <RevealObserver />
       <Header />
       <main>
-        {estado === "cancelado" && (
-          <div className="border-b border-line bg-paper-dim px-8 py-3 text-center text-[14px] text-ink-soft">
-            Has cancelado el pago. Tu pedido no se ha completado — puedes
-            volver a intentarlo cuando quieras.
-          </div>
-        )}
         <section className="py-20">
           <div className="mx-auto max-w-[1180px] px-8">
             <div className="mt-2 mb-14 text-center">

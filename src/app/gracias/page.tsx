@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
+import ClearLetrasCart from "@/components/cart/ClearLetrasCart";
 import { getStripe } from "@/lib/stripe";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ async function getSessionSummary(sessionId: string | undefined) {
     return {
       email: session.customer_details?.email ?? session.customer_email ?? null,
       total: session.amount_total != null ? session.amount_total / 100 : null,
+      tipo: session.metadata?.tipo ?? null,
     };
   } catch {
     return null;
@@ -41,8 +43,10 @@ export default async function GraciasPage({
               Gracias, hemos recibido tu pago
             </h1>
             <p className="mb-3 text-[16px] text-ink-soft">
-              Nuestro escultor ya tiene las fotos de tu mascota y empezará a
-              estudiar la pieza. Te escribiremos por email
+              {summary?.tipo === "letras"
+                ? "Nuestro taller ya tiene tu pedido de letras de cerámica y empezará a prepararlas."
+                : "Nuestro escultor ya tiene las fotos de tu mascota y empezará a estudiar la pieza."}{" "}
+              Te escribiremos por email
               {summary?.email ? ` a ${summary.email}` : ""} con las
               novedades y el plazo de entrega.
             </p>
@@ -55,6 +59,7 @@ export default async function GraciasPage({
         </section>
       </main>
       <DogFooter />
+      {summary?.tipo === "letras" && <ClearLetrasCart />}
     </>
   );
 }

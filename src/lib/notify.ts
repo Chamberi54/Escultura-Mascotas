@@ -81,33 +81,45 @@ export async function sendOrderNotification(
   });
 }
 
-export type LetrasOrderDetails = {
-  nombre: string;
-  email: string;
-  telefono: string;
+export type LetrasOrderItem = {
   palabra: string;
   colores: string[];
 };
 
-export async function sendLetrasOrderNotification(order: LetrasOrderDetails) {
-  const { nombre, email, telefono, palabra, colores } = order;
-  const total = palabra.length * LETRA_PRICE_EUR;
-  const resend = getResend();
-  const letraLines = [...palabra]
-    .map((char, i) => `${char}: ${findLetraColor(colores[i])?.label ?? colores[i]}`)
+export type LetrasOrderDetails = {
+  nombre: string;
+  email: string;
+  telefono: string;
+  items: LetrasOrderItem[];
+};
+
+function describeLetrasItem(item: LetrasOrderItem): string {
+  const letraLines = [...item.palabra]
+    .map((char, i) => `${char}: ${findLetraColor(item.colores[i])?.label ?? item.colores[i]}`)
     .join(", ");
+  return `"${item.palabra}" (${letraLines})`;
+}
+
+export async function sendLetrasOrderNotification(order: LetrasOrderDetails) {
+  const { nombre, email, telefono, items } = order;
+  const total = items.reduce((sum, item) => sum + item.palabra.length * LETRA_PRICE_EUR, 0);
+  const resend = getResend();
+  const itemsText = items.map(describeLetrasItem).join("\n");
+  const palabras = items.map((item) => `"${item.palabra}"`).join(", ");
 
   await resend.emails.send({
     from: STUDIO_FROM_EMAIL,
     to: STUDIO_ORDER_EMAIL,
     replyTo: email,
-    subject: `Pedido pagado — letras de cerámica "${palabra}" (${nombre})`,
+    subject: `Pedido pagado — letras de cerámica ${palabras} (${nombre})`,
     text: [
       `Nombre: ${nombre}`,
       `Email: ${email}`,
       `Teléfono: ${telefono}`,
-      `Palabra: ${palabra}`,
-      `Colores: ${letraLines}`,
+      "",
+      "Letras:",
+      itemsText,
+      "",
       `Total: ${total} € + gastos de envío`,
     ].join("\n"),
   });
@@ -119,7 +131,7 @@ export async function sendLetrasOrderNotification(order: LetrasOrderDetails) {
     text: [
       `Hola ${nombre},`,
       "",
-      `Hemos recibido tu pago de las letras de cerámica "${palabra}". Nuestro taller va a empezar a prepararlas.`,
+      `Hemos recibido tu pago de tus letras de cerámica ${palabras}. Nuestro taller va a empezar a prepararlas.`,
       "",
       DELIVERY_TIME_TEXT,
       "",

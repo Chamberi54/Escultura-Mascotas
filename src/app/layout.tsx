@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
+import { CartProvider } from "@/components/cart/CartContext";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -74,7 +75,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${inter.variable} ${plexMono.variable} scroll-smooth`}
     >
       <body className="min-h-screen bg-paper text-ink font-sans antialiased">
-        {children}
+        <CartProvider>{children}</CartProvider>
         <Script
           src="https://news.google.com/swg/js/v1/publisher.js"
           strategy="afterInteractive"

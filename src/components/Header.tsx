@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useCart } from "@/components/cart/CartContext";
 
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
@@ -14,6 +16,7 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { items } = useCart();
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/85 backdrop-blur-md">
@@ -38,21 +41,50 @@ export default function Header() {
           ))}
         </div>
 
-        <button
-          type="button"
-          aria-label={open ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] sm:hidden"
-        >
-          <span
-            className={`h-px w-5 bg-ink transition-transform duration-200 ${open ? "translate-y-[6px] rotate-45" : ""}`}
-          />
-          <span className={`h-px w-5 bg-ink transition-opacity duration-200 ${open ? "opacity-0" : ""}`} />
-          <span
-            className={`h-px w-5 bg-ink transition-transform duration-200 ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
-          />
-        </button>
+        <div className="flex shrink-0 items-center gap-1">
+          <Link
+            href="/carrito"
+            aria-label={`Carrito${items.length > 0 ? ` (${items.length} artículo${items.length === 1 ? "" : "s"})` : ""}`}
+            onClick={() => setOpen(false)}
+            className="relative flex h-10 w-10 items-center justify-center"
+          >
+            <svg
+              width="21"
+              height="21"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 8H6" />
+              <circle cx="9.5" cy="20" r="1.4" fill="currentColor" stroke="none" />
+              <circle cx="17.5" cy="20" r="1.4" fill="currentColor" stroke="none" />
+            </svg>
+            {items.length > 0 && (
+              <span className="absolute top-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-clay text-[10px] font-medium text-paper">
+                {items.length}
+              </span>
+            )}
+          </Link>
+
+          <button
+            type="button"
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] sm:hidden"
+          >
+            <span
+              className={`h-px w-5 bg-ink transition-transform duration-200 ${open ? "translate-y-[6px] rotate-45" : ""}`}
+            />
+            <span className={`h-px w-5 bg-ink transition-opacity duration-200 ${open ? "opacity-0" : ""}`} />
+            <span
+              className={`h-px w-5 bg-ink transition-transform duration-200 ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
+            />
+          </button>
+        </div>
       </nav>
 
       {open && (
