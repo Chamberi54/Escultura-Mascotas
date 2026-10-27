@@ -52,8 +52,7 @@ export default function LetrasPersonalizadasPage() {
               </h1>
               <p className="mt-5 mx-auto max-w-[560px] text-[17px] text-ink-soft">
                 Letras de cerámica hechas a mano, esmaltadas en el color que
-                elijas. El detalle perfecto para decorar una pared, un mueble
-                o regalar un nombre.
+                elijas.
               </p>
             </div>
 
