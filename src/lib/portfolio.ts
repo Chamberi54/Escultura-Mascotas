@@ -8,6 +8,16 @@ export const BROCHES: PortfolioPiece[] = [
   { title: "Broche pez", image: "/portfolio/joyeria/broche-pez.jpg" },
 ];
 
+export const CRUCES: PortfolioPiece[] = [
+  { title: "Cruz rama azul", image: "/portfolio/joyeria/cruz-rama-azul.jpg" },
+  { title: "Cruz pintada", image: "/portfolio/joyeria/cruz-pintada.jpg" },
+  { title: "Cruz piedra", image: "/portfolio/joyeria/cruz-piedra.jpg" },
+  { title: "Cruz mosaico", image: "/portfolio/joyeria/cruz-mosaico.jpg" },
+  { title: "Cruz Chamberí", image: "/portfolio/joyeria/cruz-chamberi.jpg" },
+  { title: "Cruz blanca", image: "/portfolio/joyeria/cruz-blanca.jpg" },
+  { title: "Cruz menta", image: "/portfolio/joyeria/cruz-menta.jpg" },
+];
+
 export const PENDIENTES: PortfolioPiece[] = [
   { title: "Pendientes esmalte azul cielo", image: "/portfolio/joyeria/pendiente-esmalte-azul-cielo.jpg" },
   { title: "Pendientes esmalte azul oscuro", image: "/portfolio/joyeria/pendiente-esmalte-azul-oscuro.jpg" },

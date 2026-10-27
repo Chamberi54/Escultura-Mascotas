@@ -4,7 +4,7 @@ import DogFooter from "@/components/dog/DogFooter";
 import BackLink from "@/components/portfolio/BackLink";
 import SectionBanner from "@/components/portfolio/SectionBanner";
 import PieceGrid from "@/components/portfolio/PieceGrid";
-import { BROCHES, PENDIENTES } from "@/lib/portfolio";
+import { BROCHES, CRUCES, PENDIENTES } from "@/lib/portfolio";
 
 const title = "Joyería — Chamberí 54";
 const description =
@@ -54,6 +54,9 @@ export default function JoyeriaPage() {
 
             <SectionBanner title="Broches" image="/portfolio/joyeria/conjunto-broches.jpg" />
             <PieceGrid pieces={BROCHES} className="mb-20" />
+
+            <SectionBanner title="Cruces" image="/portfolio/joyeria/cruz-chamberi.jpg" />
+            <PieceGrid pieces={CRUCES} className="mb-20" />
 
             <SectionBanner title="Pendientes" image="/portfolio/joyeria/conjunto-pendientes.jpg" />
             <PieceGrid pieces={PENDIENTES} />
