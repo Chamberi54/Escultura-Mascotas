@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/mascotas-personalizadas", label: "Mascotas personalizadas" },
   { href: "/arte-personalizado", label: "Arte personalizado" },
+  { href: "/letras-personalizadas", label: "Letras personalizadas" },
   { href: "/eventos-empresa", label: "Eventos de empresa" },
   { href: "/mascotas-personalizadas#contacto", label: "Contacto" },
 ];

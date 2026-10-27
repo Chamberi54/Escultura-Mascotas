@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { del } from "@vercel/blob";
 import { getStripe } from "@/lib/stripe";
 import { findSizeTier } from "@/lib/pricing";
-import { sendOrderNotification } from "@/lib/notify";
+import { sendOrderNotification, sendLetrasOrderNotification } from "@/lib/notify";
 import type Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -42,6 +42,29 @@ export async function POST(request: Request) {
   }
 
   const session = event.data.object as Stripe.Checkout.Session;
+  const metadata = session.metadata ?? {};
+
+  if (metadata.tipo === "letras") {
+    const { nombre, telefono, palabra, colores } = metadata;
+    if (!nombre || !palabra || !colores) {
+      console.error("checkout.session.completed de letras con metadata incompleta", session.id);
+      return NextResponse.json({ received: true });
+    }
+    try {
+      await sendLetrasOrderNotification({
+        nombre,
+        email: session.customer_details?.email ?? "",
+        telefono: telefono ?? "",
+        palabra,
+        colores: colores.split("|"),
+      });
+    } catch (error) {
+      console.error("Error procesando checkout.session.completed de letras", error);
+      return NextResponse.json({ error: "Error procesando el pedido." }, { status: 500 });
+    }
+    return NextResponse.json({ received: true });
+  }
+
   const detallesUrl = session.metadata?.detallesUrl;
   if (!detallesUrl) {
     console.error("checkout.session.completed sin detallesUrl en metadata", session.id);

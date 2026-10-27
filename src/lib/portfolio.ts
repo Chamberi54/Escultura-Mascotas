@@ -130,4 +130,10 @@ export const CATEGORIES: PortfolioCategory[] = [
     description: "Figuras y bustos de cerámica para encargos únicos.",
     image: "/portfolio/arte/conjunto-arte.jpg",
   },
+  {
+    slug: "letras-personalizadas",
+    title: "Letras personalizadas",
+    description: "Letras de cerámica hechas a mano, en el color que elijas.",
+    image: "/portfolio/letras/conjunto-letras.jpg",
+  },
 ];

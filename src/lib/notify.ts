@@ -1,5 +1,6 @@
 import { getResend, STUDIO_FROM_EMAIL, STUDIO_ORDER_EMAIL } from "@/lib/resend";
 import { DELIVERY_TIME_TEXT } from "@/lib/policy";
+import { findLetraColor, LETRA_PRICE_EUR } from "@/lib/letras";
 import type { SizeTier } from "@/lib/pricing";
 
 export type OrderAttachment = { filename: string; content: Buffer };
@@ -77,5 +78,52 @@ export async function sendOrderNotification(
       ? "Hemos recibido tu pago y las fotos de tu mascota — Chamberí 54"
       : "Hemos recibido las fotos de tu mascota — Chamberí 54",
     text: customerBody.join("\n"),
+  });
+}
+
+export type LetrasOrderDetails = {
+  nombre: string;
+  email: string;
+  telefono: string;
+  palabra: string;
+  colores: string[];
+};
+
+export async function sendLetrasOrderNotification(order: LetrasOrderDetails) {
+  const { nombre, email, telefono, palabra, colores } = order;
+  const total = palabra.length * LETRA_PRICE_EUR;
+  const resend = getResend();
+  const letraLines = [...palabra]
+    .map((char, i) => `${char}: ${findLetraColor(colores[i])?.label ?? colores[i]}`)
+    .join(", ");
+
+  await resend.emails.send({
+    from: STUDIO_FROM_EMAIL,
+    to: STUDIO_ORDER_EMAIL,
+    replyTo: email,
+    subject: `Pedido pagado — letras de cerámica "${palabra}" (${nombre})`,
+    text: [
+      `Nombre: ${nombre}`,
+      `Email: ${email}`,
+      `Teléfono: ${telefono}`,
+      `Palabra: ${palabra}`,
+      `Colores: ${letraLines}`,
+      `Total: ${total} € + gastos de envío`,
+    ].join("\n"),
+  });
+
+  await resend.emails.send({
+    from: STUDIO_FROM_EMAIL,
+    to: email,
+    subject: "Hemos recibido tu pago — Chamberí 54",
+    text: [
+      `Hola ${nombre},`,
+      "",
+      `Hemos recibido tu pago de las letras de cerámica "${palabra}". Nuestro taller va a empezar a prepararlas.`,
+      "",
+      DELIVERY_TIME_TEXT,
+      "",
+      "Gracias por confiar en Chamberí 54.",
+    ].join("\n"),
   });
 }
