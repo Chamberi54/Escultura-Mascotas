@@ -18,7 +18,6 @@ export default function CategoryCard({ category }: { category: PortfolioCategory
         <h2 className="font-display text-[22px] font-[450] text-ink group-hover:text-verdigris-dark">
           {category.title}
         </h2>
-        <p className="mt-1.5 text-[14px] text-ink-soft">{category.description}</p>
       </div>
     </Link>
   );
