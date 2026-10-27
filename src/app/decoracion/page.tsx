@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
 import BackLink from "@/components/portfolio/BackLink";
-import SectionBanner from "@/components/portfolio/SectionBanner";
 import PieceGrid from "@/components/portfolio/PieceGrid";
-import { DECORACION } from "@/lib/portfolio";
+import { GALGOS, TECKLES, FIGURAS_DECORACION } from "@/lib/portfolio";
 
 const title = "Decoración — Chamberí 54";
 const description =
@@ -45,18 +44,27 @@ export default function DecoracionPage() {
         <section className="py-20">
           <div className="mx-auto max-w-[1180px] px-8">
             <BackLink />
-            <div className="mt-6 mb-7 text-center">
-              <span className="eyebrow-badge bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
+            <div className="mt-6 mb-14 text-center">
+              <span className="eyebrow-badge mb-5 bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
                 Chamberí 54
               </span>
+              <h1 className="heading-hero font-display font-[450] tracking-[-0.01em]">Decoración</h1>
             </div>
 
-            <SectionBanner
-              title="Decoración"
-              image="/portfolio/decoracion/conjunto-decoracion.jpg"
-              level="h1"
-            />
-            <PieceGrid pieces={DECORACION} />
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Nuestros galgos
+            </h2>
+            <PieceGrid pieces={GALGOS} className="mb-20" />
+
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Nuestros teckles
+            </h2>
+            <PieceGrid pieces={TECKLES} className="mb-20" />
+
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Figuras
+            </h2>
+            <PieceGrid pieces={FIGURAS_DECORACION} />
           </div>
         </section>
       </main>

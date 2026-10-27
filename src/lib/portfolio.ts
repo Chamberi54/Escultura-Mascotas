@@ -9,13 +9,13 @@ export const BROCHES: PortfolioPiece[] = [
 ];
 
 export const CRUCES: PortfolioPiece[] = [
-  { title: "Cruz rama azul", image: "/portfolio/joyeria/cruz-rama-azul.jpg" },
-  { title: "Cruz pintada", image: "/portfolio/joyeria/cruz-pintada.jpg" },
-  { title: "Cruz piedra", image: "/portfolio/joyeria/cruz-piedra.jpg" },
-  { title: "Cruz mosaico", image: "/portfolio/joyeria/cruz-mosaico.jpg" },
-  { title: "Cruz Chamberí", image: "/portfolio/joyeria/cruz-chamberi.jpg" },
-  { title: "Cruz blanca", image: "/portfolio/joyeria/cruz-blanca.jpg" },
-  { title: "Cruz menta", image: "/portfolio/joyeria/cruz-menta.jpg" },
+  { title: "Cruz esmalte azul cielo", image: "/portfolio/joyeria/cruz-rama-azul.jpg" },
+  { title: "Cruz esmalte turquesa y mostaza", image: "/portfolio/joyeria/cruz-pintada.jpg" },
+  { title: "Cruz esmalte rojo", image: "/portfolio/joyeria/cruz-piedra.jpg" },
+  { title: "Cruz esmalte multicolor", image: "/portfolio/joyeria/cruz-mosaico.jpg" },
+  { title: "Cruz esmalte beige moteado", image: "/portfolio/joyeria/cruz-chamberi.jpg" },
+  { title: "Cruz esmalte azul marino", image: "/portfolio/joyeria/cruz-blanca.jpg" },
+  { title: "Cruz esmalte menta", image: "/portfolio/joyeria/cruz-menta.jpg" },
 ];
 
 export const PENDIENTES: PortfolioPiece[] = [
@@ -51,15 +51,21 @@ export const PERCHEROS: PortfolioPiece[] = [
   { title: "Busto de galgo", image: "/portfolio/hogar/busto-galgo.jpg" },
 ];
 
-export const DECORACION: PortfolioPiece[] = [
-  { title: "Salchicha bronce", image: "/portfolio/decoracion/salchicha-bronce.jpg" },
+export const GALGOS: PortfolioPiece[] = [
+  { title: "Galgo crema", image: "/portfolio/decoracion/galgo-crema.jpg" },
+  { title: "Galgo carbón", image: "/portfolio/decoracion/galgo-carbon.jpg" },
+];
+
+export const TECKLES: PortfolioPiece[] = [
+  { title: "Teckle bronce", image: "/portfolio/decoracion/salchicha-bronce.jpg" },
+  { title: "Teckle rojo", image: "/portfolio/decoracion/salchicha-roja.jpg" },
+  { title: "Teckle jaspeado", image: "/portfolio/decoracion/salchicha-jaspeada.jpg" },
+  { title: "Teckle moteado", image: "/portfolio/decoracion/salchicha-moteada.jpg" },
+];
+
+export const FIGURAS_DECORACION: PortfolioPiece[] = [
   { title: "Figura abstracta esmaltada", image: "/portfolio/decoracion/figura-abstracta.jpg" },
   { title: "Figura floral", image: "/portfolio/decoracion/figura-floral.jpg" },
-  { title: "Salchicha roja", image: "/portfolio/decoracion/salchicha-roja.jpg" },
-  { title: "Salchicha jaspeada", image: "/portfolio/decoracion/salchicha-jaspeada.jpg" },
-  { title: "Galgo crema", image: "/portfolio/decoracion/galgo-crema.jpg" },
-  { title: "Salchicha moteada", image: "/portfolio/decoracion/salchicha-moteada.jpg" },
-  { title: "Galgo carbón", image: "/portfolio/decoracion/galgo-carbon.jpg" },
 ];
 
 export const MASCOTAS: PortfolioPiece[] = [
