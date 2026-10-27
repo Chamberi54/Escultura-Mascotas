@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
 import BackLink from "@/components/portfolio/BackLink";
 import PieceGrid from "@/components/portfolio/PieceGrid";
+import FloatingOrderButton from "@/components/portfolio/FloatingOrderButton";
 import { MASCOTAS } from "@/lib/portfolio";
 
 const title = "Mascotas personalizadas — Chamberí 54";
@@ -58,6 +59,7 @@ export default function MascotasCatalogoPage() {
         </section>
       </main>
       <DogFooter />
+      <FloatingOrderButton href="/mascotas-personalizadas" label="Pedir mi mascota" />
     </>
   );
 }

@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
 import BackLink from "@/components/portfolio/BackLink";
 import PieceGrid from "@/components/portfolio/PieceGrid";
+import FloatingOrderButton from "@/components/portfolio/FloatingOrderButton";
 import { ARTE_SACRO, ICONOS, DE_AUTOR } from "@/lib/portfolio";
 
 const title = "Arte personalizado — Chamberí 54";
@@ -71,6 +72,7 @@ export default function ArteCatalogoPage() {
         </section>
       </main>
       <DogFooter />
+      <FloatingOrderButton href="/arte-personalizado" label="Hagamos tu idea realidad" />
     </>
   );
 }
