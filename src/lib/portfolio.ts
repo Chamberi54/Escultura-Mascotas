@@ -68,11 +68,11 @@ export const TECKLES: PortfolioPiece[] = [
 export const MASCOTAS: PortfolioPiece[] = [
   { title: "Pastor alemán", image: "/portfolio/mascotas/pastor-aleman.jpg" },
   { title: "Terrier escocés", image: "/portfolio/mascotas/terrier-escoces.jpg" },
-  { title: "Lobo", image: "/portfolio/mascotas/lobo.jpg" },
+  { title: "Husky", image: "/portfolio/mascotas/lobo.jpg" },
   { title: "Bóxer", image: "/portfolio/mascotas/boxer.jpg" },
-  { title: "Perro león", image: "/portfolio/mascotas/perro-leon.jpg" },
-  { title: "Bulldog", image: "/portfolio/mascotas/bulldog.jpg" },
-  { title: "Chihuahua", image: "/portfolio/mascotas/chihuahua.jpg" },
+  { title: "Bichón maltés", image: "/portfolio/mascotas/perro-leon.jpg" },
+  { title: "Yorkshire", image: "/portfolio/mascotas/bulldog.jpg" },
+  { title: "Galgo italiano", image: "/portfolio/mascotas/chihuahua.jpg" },
   { title: "Airedale terrier", image: "/portfolio/mascotas/airedale.jpg" },
 ];
 
