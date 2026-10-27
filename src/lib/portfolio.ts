@@ -24,15 +24,21 @@ export const PENDIENTES: PortfolioPiece[] = [
   { title: "Pendientes porcelana turquesa", image: "/portfolio/joyeria/pendiente-porcelana-turquesa.jpg" },
 ];
 
-export const HOGAR: PortfolioPiece[] = [
-  { title: "Tulipanes en jarrón", image: "/portfolio/hogar/tulipanes-jarron.jpg" },
+export const FLORES_MACETAS: PortfolioPiece[] = [
+  { title: "Tulipanes amarillos", image: "/portfolio/hogar/tulipanes-jarron.jpg" },
   { title: "Maceta esmalte cuarteado", image: "/portfolio/hogar/maceta-cuarteada.jpg" },
-  { title: "Jarrón jaspeado", image: "/portfolio/hogar/jarron-jaspeado.jpg" },
-  { title: "Busto de galgo", image: "/portfolio/hogar/busto-galgo.jpg" },
-  { title: "Jarrón multicolor", image: "/portfolio/hogar/jarron-multicolor.jpg" },
   { title: "Cesta de cerámica", image: "/portfolio/hogar/cesta-ceramica.jpg" },
   { title: "Set de macetas verde agua", image: "/portfolio/hogar/macetas-verde-agua.jpg" },
   { title: "Set de macetas teal", image: "/portfolio/hogar/macetas-teal.jpg" },
+];
+
+export const DIFUSORES: PortfolioPiece[] = [
+  { title: "Jarrón jaspeado", image: "/portfolio/hogar/jarron-jaspeado.jpg" },
+  { title: "Jarrón multicolor", image: "/portfolio/hogar/jarron-multicolor.jpg" },
+];
+
+export const PERCHEROS: PortfolioPiece[] = [
+  { title: "Busto de galgo", image: "/portfolio/hogar/busto-galgo.jpg" },
 ];
 
 export const DECORACION: PortfolioPiece[] = [
