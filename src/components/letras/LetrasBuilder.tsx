@@ -297,7 +297,7 @@ function LetrasPreview({ word, colors }: { word: string; colors: string[] }) {
               {letters.map((letter, i) => (
                 <div
                   key={i}
-                  className="relative h-[13vw] w-[13vw] max-h-24 max-w-24 min-h-10 min-w-10 drop-shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
+                  className="relative h-[8vw] w-[8vw] max-h-14 max-w-14 min-h-6 min-w-6 drop-shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
                 >
                   <Image
                     src={letraImageSrc(letter.char, letter.color)}
