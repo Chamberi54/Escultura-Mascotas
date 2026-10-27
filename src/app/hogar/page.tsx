@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
 import BackLink from "@/components/portfolio/BackLink";
-import SectionBanner from "@/components/portfolio/SectionBanner";
 import PieceGrid from "@/components/portfolio/PieceGrid";
 import { FLORES_MACETAS, DIFUSORES, PERCHEROS } from "@/lib/portfolio";
 
@@ -52,13 +51,19 @@ export default function HogarPage() {
               <h1 className="heading-hero font-display font-[450] tracking-[-0.01em]">Hogar</h1>
             </div>
 
-            <SectionBanner title="Flores y macetas cerámicas" image="/portfolio/hogar/tulipanes-jarron.jpg" />
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Flores y macetas cerámicas
+            </h2>
             <PieceGrid pieces={FLORES_MACETAS} className="mb-20" />
 
-            <SectionBanner title="Difusores" image="/portfolio/hogar/jarron-jaspeado.jpg" />
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Difusores
+            </h2>
             <PieceGrid pieces={DIFUSORES} className="mb-20" />
 
-            <SectionBanner title="Percheros" image="/portfolio/hogar/busto-galgo.jpg" />
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Percheros
+            </h2>
             <PieceGrid pieces={PERCHEROS} />
           </div>
         </section>
