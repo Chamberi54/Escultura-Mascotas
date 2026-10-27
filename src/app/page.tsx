@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
+import HomeHero from "@/components/home/HomeHero";
+import FeatureStrip from "@/components/home/FeatureStrip";
 import CategoryCard from "@/components/portfolio/CategoryCard";
 import { CATEGORIES } from "@/lib/portfolio";
 
@@ -41,19 +42,18 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        <section className="py-24">
+        <HomeHero />
+        <FeatureStrip />
+        <section className="py-24" id="colecciones">
           <div className="mx-auto max-w-[1180px] px-8">
             <div className="mb-14 text-center">
-              <h1 className="w-full">
-                <Image
-                  src="/logo/chamberi54-banner.jpg"
-                  alt="Chamberí 54 — Concept Store"
-                  width={1400}
-                  height={467}
-                  className="h-auto w-full rounded-sm"
-                  priority
-                />
-              </h1>
+              <span className="eyebrow-badge mb-5 bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
+                <span className="h-1.5 w-1.5 rounded-full bg-clay" />
+                Chamberí 54
+              </span>
+              <h2 className="heading-hero mx-auto max-w-[640px] font-display font-[450] tracking-[-0.01em]">
+                Nuestras colecciones
+              </h2>
               <p className="mt-5 mx-auto max-w-[560px] text-[17px] text-ink-soft">
                 Piezas únicas hechas a mano en el corazón de Chamberí:
                 joyería, piezas para el hogar y arte en cerámica. El detalle
