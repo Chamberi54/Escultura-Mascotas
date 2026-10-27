@@ -2,7 +2,6 @@ export type PortfolioPiece = { title: string; image: string };
 
 export const BROCHES: PortfolioPiece[] = [
   { title: "Broche corazón rojo", image: "/portfolio/joyeria/broche-corazon-rojo.jpg" },
-  { title: "Broche corazón verde", image: "/portfolio/joyeria/broche-corazon-verde.jpg" },
   { title: "Broche perro", image: "/portfolio/joyeria/broche-perro.jpg" },
   { title: "Broche coche amarillo", image: "/portfolio/joyeria/broche-coche-amarillo.jpg" },
   { title: "Broche coche rojo", image: "/portfolio/joyeria/broche-coche-rojo.jpg" },
