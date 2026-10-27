@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
 import BackLink from "@/components/portfolio/BackLink";
-import SectionBanner from "@/components/portfolio/SectionBanner";
 import PieceGrid from "@/components/portfolio/PieceGrid";
-import { ARTE } from "@/lib/portfolio";
+import { ARTE_SACRO, ICONOS, DE_AUTOR } from "@/lib/portfolio";
 
 const title = "Arte personalizado — Chamberí 54";
 const description =
@@ -45,18 +44,29 @@ export default function ArteCatalogoPage() {
         <section className="py-20">
           <div className="mx-auto max-w-[1180px] px-8">
             <BackLink />
-            <div className="mt-6 mb-7 text-center">
-              <span className="eyebrow-badge bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
+            <div className="mt-6 mb-14 text-center">
+              <span className="eyebrow-badge mb-5 bg-paper-dim font-mono text-[11px] tracking-[0.14em] text-verdigris-dark uppercase">
                 Chamberí 54
               </span>
+              <h1 className="heading-hero font-display font-[450] tracking-[-0.01em]">
+                Arte personalizado
+              </h1>
             </div>
 
-            <SectionBanner
-              title="Arte personalizado"
-              image="/portfolio/arte/conjunto-arte.jpg"
-              level="h1"
-            />
-            <PieceGrid pieces={ARTE} />
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Arte sacro
+            </h2>
+            <PieceGrid pieces={ARTE_SACRO} className="mb-20" />
+
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Iconos
+            </h2>
+            <PieceGrid pieces={ICONOS} className="mb-20" />
+
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              De autor
+            </h2>
+            <PieceGrid pieces={DE_AUTOR} />
           </div>
         </section>
       </main>

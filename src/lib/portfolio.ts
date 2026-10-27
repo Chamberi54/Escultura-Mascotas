@@ -76,12 +76,18 @@ export const MASCOTAS: PortfolioPiece[] = [
   { title: "Airedale terrier", image: "/portfolio/mascotas/airedale.jpg" },
 ];
 
-export const ARTE: PortfolioPiece[] = [
-  { title: "Aguadora", image: "/portfolio/arte/aguadora.jpg" },
-  { title: "Figura religiosa", image: "/portfolio/arte/figura-religiosa.jpg" },
-  { title: "Busto", image: "/portfolio/arte/busto.jpg" },
-  { title: "Figura aventurero", image: "/portfolio/arte/figura-aventurero.jpg" },
+export const ARTE_SACRO: PortfolioPiece[] = [
+  { title: "Virgen milagrosa", image: "/portfolio/arte/figura-religiosa.jpg" },
+];
+
+export const ICONOS: PortfolioPiece[] = [
   { title: "Robot y perro", image: "/portfolio/arte/robot-y-perro.jpg" },
+];
+
+export const DE_AUTOR: PortfolioPiece[] = [
+  { title: "Aventurero Astronauta", image: "/portfolio/arte/figura-aventurero.jpg" },
+  { title: "Busto", image: "/portfolio/arte/busto.jpg" },
+  { title: "Aguadora", image: "/portfolio/arte/aguadora.jpg" },
 ];
 
 export type PortfolioCategory = {
