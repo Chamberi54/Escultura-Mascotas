@@ -52,6 +52,11 @@ export default function JoyeriaPage() {
             </div>
 
             <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Pendientes
+            </h2>
+            <PieceGrid pieces={PENDIENTES} className="mb-20" />
+
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
               Broches
             </h2>
             <PieceGrid pieces={BROCHES} className="mb-20" />
@@ -59,12 +64,7 @@ export default function JoyeriaPage() {
             <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
               Cruces
             </h2>
-            <PieceGrid pieces={CRUCES} className="mb-20" />
-
-            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
-              Pendientes
-            </h2>
-            <PieceGrid pieces={PENDIENTES} />
+            <PieceGrid pieces={CRUCES} />
           </div>
         </section>
       </main>
