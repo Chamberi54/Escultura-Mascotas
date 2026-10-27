@@ -81,11 +81,11 @@ export const ARTE_SACRO: PortfolioPiece[] = [
 ];
 
 export const ICONOS: PortfolioPiece[] = [
-  { title: "Robot y perro", image: "/portfolio/arte/robot-y-perro.jpg" },
+  { title: "Aventurero astronauta", image: "/portfolio/arte/robot-y-perro.jpg" },
+  { title: "Aventurero", image: "/portfolio/arte/figura-aventurero.jpg" },
 ];
 
 export const DE_AUTOR: PortfolioPiece[] = [
-  { title: "Aventurero Astronauta", image: "/portfolio/arte/figura-aventurero.jpg" },
   { title: "Busto", image: "/portfolio/arte/busto.jpg" },
   { title: "Aguadora", image: "/portfolio/arte/aguadora.jpg" },
 ];
