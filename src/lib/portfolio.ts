@@ -78,11 +78,14 @@ export const MASCOTAS: PortfolioPiece[] = [
 
 export const ARTE_SACRO: PortfolioPiece[] = [
   { title: "Virgen milagrosa", image: "/portfolio/arte/figura-religiosa.jpg" },
+  { title: "San José", image: "/portfolio/arte/san-jose.jpg" },
+  { title: "Virgen serena", image: "/portfolio/arte/virgen-serena.jpg" },
 ];
 
 export const ICONOS: PortfolioPiece[] = [
   { title: "Aventurero astronauta", image: "/portfolio/arte/robot-y-perro.jpg" },
   { title: "Aventurero", image: "/portfolio/arte/figura-aventurero.jpg" },
+  { title: "Cantante de ópera", image: "/portfolio/arte/cantante-opera.jpg" },
 ];
 
 export const DE_AUTOR: PortfolioPiece[] = [
