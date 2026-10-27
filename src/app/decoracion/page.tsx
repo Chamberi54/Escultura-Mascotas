@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
 import BackLink from "@/components/portfolio/BackLink";
 import PieceGrid from "@/components/portfolio/PieceGrid";
-import { GALGOS, TECKLES, FIGURAS_DECORACION } from "@/lib/portfolio";
+import { GALGOS, TECKLES } from "@/lib/portfolio";
 
 const title = "Decoración — Chamberí 54";
 const description =
@@ -59,12 +59,7 @@ export default function DecoracionPage() {
             <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
               Nuestros teckles
             </h2>
-            <PieceGrid pieces={TECKLES} className="mb-20" />
-
-            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
-              Figuras
-            </h2>
-            <PieceGrid pieces={FIGURAS_DECORACION} />
+            <PieceGrid pieces={TECKLES} />
           </div>
         </section>
       </main>

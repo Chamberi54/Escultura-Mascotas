@@ -54,6 +54,8 @@ export const PERCHEROS: PortfolioPiece[] = [
 export const GALGOS: PortfolioPiece[] = [
   { title: "Galgo crema", image: "/portfolio/decoracion/galgo-crema.jpg" },
   { title: "Galgo carbón", image: "/portfolio/decoracion/galgo-carbon.jpg" },
+  { title: "Figura abstracta esmaltada", image: "/portfolio/decoracion/figura-abstracta.jpg" },
+  { title: "Figura floral", image: "/portfolio/decoracion/figura-floral.jpg" },
 ];
 
 export const TECKLES: PortfolioPiece[] = [
@@ -61,11 +63,6 @@ export const TECKLES: PortfolioPiece[] = [
   { title: "Teckle rojo", image: "/portfolio/decoracion/salchicha-roja.jpg" },
   { title: "Teckle jaspeado", image: "/portfolio/decoracion/salchicha-jaspeada.jpg" },
   { title: "Teckle moteado", image: "/portfolio/decoracion/salchicha-moteada.jpg" },
-];
-
-export const FIGURAS_DECORACION: PortfolioPiece[] = [
-  { title: "Figura abstracta esmaltada", image: "/portfolio/decoracion/figura-abstracta.jpg" },
-  { title: "Figura floral", image: "/portfolio/decoracion/figura-floral.jpg" },
 ];
 
 export const MASCOTAS: PortfolioPiece[] = [
