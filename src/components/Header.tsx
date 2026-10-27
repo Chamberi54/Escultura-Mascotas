@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const NAV_LINKS = [
+  { href: "/", label: "Inicio" },
   { href: "/mascotas-personalizadas", label: "Mascotas personalizadas" },
   { href: "/arte-personalizado", label: "Arte personalizado" },
   { href: "/eventos-empresa", label: "Eventos de empresa" },
