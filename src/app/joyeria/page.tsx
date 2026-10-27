@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
 import BackLink from "@/components/portfolio/BackLink";
-import SectionBanner from "@/components/portfolio/SectionBanner";
 import PieceGrid from "@/components/portfolio/PieceGrid";
 import { BROCHES, CRUCES, PENDIENTES } from "@/lib/portfolio";
 
@@ -52,13 +51,19 @@ export default function JoyeriaPage() {
               <h1 className="heading-hero font-display font-[450] tracking-[-0.01em]">Joyería</h1>
             </div>
 
-            <SectionBanner title="Broches" image="/portfolio/joyeria/conjunto-broches.jpg" />
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Broches
+            </h2>
             <PieceGrid pieces={BROCHES} className="mb-20" />
 
-            <SectionBanner title="Cruces" image="/portfolio/joyeria/cruz-chamberi.jpg" />
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Cruces
+            </h2>
             <PieceGrid pieces={CRUCES} className="mb-20" />
 
-            <SectionBanner title="Pendientes" image="/portfolio/joyeria/conjunto-pendientes.jpg" />
+            <h2 className="heading-section-sm mb-7 text-center font-display font-[450]">
+              Pendientes
+            </h2>
             <PieceGrid pieces={PENDIENTES} />
           </div>
         </section>
