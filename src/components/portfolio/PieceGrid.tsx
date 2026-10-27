@@ -9,9 +9,12 @@ export default function PieceGrid({
   className?: string;
 }) {
   return (
-    <div className={`grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 ${className}`}>
+    <div className={`flex flex-wrap justify-center gap-5 ${className}`}>
       {pieces.map((piece) => (
-        <div key={piece.image} className="group">
+        <div
+          key={piece.image}
+          className="group w-[calc((100%-20px)/2)] sm:w-[calc((100%-40px)/3)] lg:w-[calc((100%-60px)/4)]"
+        >
           <div className="shadow-soft relative aspect-square overflow-hidden rounded-sm border border-line">
             <Image
               src={piece.image}
