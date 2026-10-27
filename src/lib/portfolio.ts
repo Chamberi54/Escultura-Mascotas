@@ -54,8 +54,8 @@ export const PERCHEROS: PortfolioPiece[] = [
 export const GALGOS: PortfolioPiece[] = [
   { title: "Galgo crema", image: "/portfolio/decoracion/galgo-crema.jpg" },
   { title: "Galgo carbón", image: "/portfolio/decoracion/galgo-carbon.jpg" },
-  { title: "Figura abstracta esmaltada", image: "/portfolio/decoracion/figura-abstracta.jpg" },
-  { title: "Figura floral", image: "/portfolio/decoracion/figura-floral.jpg" },
+  { title: "Galgo negro", image: "/portfolio/decoracion/figura-abstracta.jpg" },
+  { title: "Galgo con flores", image: "/portfolio/decoracion/figura-floral.jpg" },
 ];
 
 export const TECKLES: PortfolioPiece[] = [
