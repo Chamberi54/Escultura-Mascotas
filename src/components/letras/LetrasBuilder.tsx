@@ -70,7 +70,7 @@ export default function LetrasBuilder() {
         <h2 className="mb-2 font-display text-[22px] font-[450]">Personaliza tus letras</h2>
         <p className="mb-7 text-sm text-ink-soft">
           Escribe tu palabra, elige el color de cada letra y añádelas al
-          carrito. {LETRA_PRICE_EUR} € por letra.
+          carrito. Cada letra mide 12 cm y cuesta {LETRA_PRICE_EUR} €.
         </p>
 
         <label htmlFor="palabra" className={fieldLabel}>
