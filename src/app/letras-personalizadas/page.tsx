@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
 import RevealObserver from "@/components/RevealObserver";
 import LetrasBuilder from "@/components/letras/LetrasBuilder";
+import { DELIVERY_TIME_TEXT } from "@/lib/policy";
 
 const title = "Letras personalizadas de cerámica — Chamberí 54";
 const description =
@@ -53,6 +54,9 @@ export default function LetrasPersonalizadasPage() {
               <p className="mt-5 mx-auto max-w-[560px] text-[17px] text-ink-soft">
                 Letras de cerámica hechas a mano, esmaltadas en el color que
                 elijas. Cada letra mide 12 cm.
+              </p>
+              <p className="mt-4 font-mono text-[11.5px] tracking-[0.02em] text-verdigris-dark">
+                {DELIVERY_TIME_TEXT}
               </p>
             </div>
 
