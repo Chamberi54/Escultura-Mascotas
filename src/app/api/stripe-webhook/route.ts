@@ -3,7 +3,7 @@ import { del } from "@vercel/blob";
 import { getStripe } from "@/lib/stripe";
 import { findSizeTier } from "@/lib/pricing";
 import { sendOrderNotification, sendLetrasOrderNotification } from "@/lib/notify";
-import type { LetrasOrderItem } from "@/lib/notify";
+import { decodeLetraItems } from "@/lib/letras";
 import type Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -17,13 +17,6 @@ type StoredOrderDetails = {
   aceptadoEn: string;
   tamanoId: string;
   fotos: { url: string; filename: string }[];
-};
-
-type StoredLetrasOrderDetails = {
-  nombre: string;
-  email: string;
-  telefono: string;
-  items: LetrasOrderItem[];
 };
 
 export async function POST(request: Request) {
@@ -53,26 +46,19 @@ export async function POST(request: Request) {
   const metadata = session.metadata ?? {};
 
   if (metadata.tipo === "letras") {
-    const letrasDetallesUrl = metadata.detallesUrl;
-    if (!letrasDetallesUrl) {
-      console.error("checkout.session.completed de letras sin detallesUrl", session.id);
+    const { nombre, telefono, items: itemsEncoded } = metadata;
+    const items = itemsEncoded ? decodeLetraItems(itemsEncoded) : [];
+    if (!nombre || items.length === 0) {
+      console.error("checkout.session.completed de letras con metadata incompleta", session.id);
       return NextResponse.json({ received: true });
     }
     try {
-      const detallesRes = await fetch(letrasDetallesUrl);
-      if (!detallesRes.ok) {
-        throw new Error(`No se pudieron leer los detalles del pedido de letras (${detallesRes.status})`);
-      }
-      const detalles = (await detallesRes.json()) as StoredLetrasOrderDetails;
-
       await sendLetrasOrderNotification({
-        nombre: detalles.nombre,
-        email: session.customer_details?.email ?? detalles.email,
-        telefono: detalles.telefono,
-        items: detalles.items,
+        nombre,
+        email: session.customer_details?.email ?? "",
+        telefono: telefono ?? "",
+        items,
       });
-
-      await del(letrasDetallesUrl);
     } catch (error) {
       console.error("Error procesando checkout.session.completed de letras", error);
       return NextResponse.json({ error: "Error procesando el pedido." }, { status: 500 });

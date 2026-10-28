@@ -1,14 +1,15 @@
 import { NextResponse } from "next/server";
-import { put } from "@vercel/blob";
 import { getStripe } from "@/lib/stripe";
 import { DOG_SHIPPING_OPTIONS } from "@/lib/pricing";
-import { findLetraColor, LETRA_PRICE_EUR, normalizeLetraWord } from "@/lib/letras";
+import { encodeLetraItems, findLetraColor, LETRA_PRICE_EUR, normalizeLetraWord } from "@/lib/letras";
 import type { LetrasOrderItem } from "@/lib/notify";
 
 export const runtime = "nodejs";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const MAX_ITEMS = 20;
+// Los items de cada pedido se codifican en la metadata de Stripe (máx. 500
+// caracteres por valor), así que el carrito se limita a un tamaño razonable.
+const MAX_ITEMS = 12;
 
 function parseItem(raw: unknown): LetrasOrderItem | null {
   if (!raw || typeof raw !== "object") return null;
@@ -70,22 +71,7 @@ export async function POST(request: Request) {
   const validItems = parsedItems as LetrasOrderItem[];
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-
-  let detallesUrl: string;
-  try {
-    const detallesBlob = await put(
-      `pedidos-letras/${Date.now()}-detalles.json`,
-      JSON.stringify({ nombre: nombreStr, email: emailStr, telefono: telefonoStr, items: validItems }),
-      { access: "public", addRandomSuffix: true, contentType: "application/json" },
-    );
-    detallesUrl = detallesBlob.url;
-  } catch (error) {
-    console.error("Error guardando los detalles del pedido de letras", error);
-    return NextResponse.json(
-      { error: "No hemos podido procesar tu pedido. Inténtalo de nuevo en unos minutos." },
-      { status: 502 },
-    );
-  }
+  const itemsEncoded = encodeLetraItems(validItems);
 
   try {
     const stripe = getStripe();
@@ -113,7 +99,7 @@ export async function POST(request: Request) {
           display_name: option.label,
         },
       })),
-      metadata: { tipo: "letras", detallesUrl },
+      metadata: { tipo: "letras", nombre: nombreStr, telefono: telefonoStr, items: itemsEncoded },
       success_url: `${siteUrl}/gracias?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/carrito?estado=cancelado`,
     });

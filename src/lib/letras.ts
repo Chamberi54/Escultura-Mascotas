@@ -42,3 +42,41 @@ export function normalizeLetraWord(input: string): string {
 export function letraImageSrc(letter: string, colorId: string): string {
   return `/letras/${colorId}/${letter}.png`;
 }
+
+export type LetraCartItem = { palabra: string; colores: string[] };
+
+// Codifica cada color como un único carácter (índice en LETRA_COLORS, en base 36)
+// para poder guardar un pedido completo dentro de la metadata de Stripe, sin
+// depender de un almacenamiento externo (Vercel Blob) para esta pasarela.
+const COLOR_CODE_CHARS = "0123456789abcdefghijklmnopqrstuvwxyz";
+
+function encodeLetraColors(colores: string[]): string {
+  return colores
+    .map((id) => {
+      const idx = LETRA_COLORS.findIndex((c) => c.id === id);
+      return COLOR_CODE_CHARS[idx] ?? "0";
+    })
+    .join("");
+}
+
+function decodeLetraColors(code: string): string[] {
+  return [...code].map((char) => {
+    const idx = COLOR_CODE_CHARS.indexOf(char);
+    return LETRA_COLORS[idx]?.id ?? DEFAULT_LETRA_COLOR;
+  });
+}
+
+export function encodeLetraItems(items: LetraCartItem[]): string {
+  return items.map((item) => `${item.palabra}:${encodeLetraColors(item.colores)}`).join(";");
+}
+
+export function decodeLetraItems(raw: string): LetraCartItem[] {
+  return raw
+    .split(";")
+    .map((entry) => {
+      const [palabra, code] = entry.split(":");
+      if (!palabra || !code || code.length !== palabra.length) return null;
+      return { palabra, colores: decodeLetraColors(code) };
+    })
+    .filter((item): item is LetraCartItem => item !== null);
+}
