@@ -14,6 +14,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  alternates: { canonical: "/eventos-empresa" },
   keywords: [
     "eventos de empresa Madrid",
     "team building Madrid",

@@ -64,6 +64,24 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "Store",
+  name: "Chamberí 54",
+  description,
+  url: siteUrl,
+  image: `${siteUrl}/portfolio/joyeria/conjunto-broches.jpg`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Calle de García de Paredes, 54",
+    addressLocality: "Madrid",
+    postalCode: "28010",
+    addressCountry: "ES",
+  },
+  sameAs: ["https://www.instagram.com/chamberi_54"],
+  priceRange: "€€",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -75,6 +93,10 @@ export default function RootLayout({
       className={`${fraunces.variable} ${inter.variable} ${plexMono.variable} scroll-smooth`}
     >
       <body className="min-h-screen bg-paper text-ink font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         <CartProvider>{children}</CartProvider>
         <Script
           src="https://news.google.com/swg/js/v1/publisher.js"

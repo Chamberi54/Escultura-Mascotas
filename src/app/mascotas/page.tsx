@@ -13,6 +13,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  alternates: { canonical: "/mascotas" },
   openGraph: {
     title,
     description,

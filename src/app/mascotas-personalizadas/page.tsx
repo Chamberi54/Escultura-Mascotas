@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Esculturas de mascotas hechas a mano — Chamberí 54",
   description:
     "Envíanos las fotos de tu mascota y modelamos a mano su escultura: elige la postura, tumbado, sentado o de pie, y recíbela en casa.",
+  alternates: { canonical: "/mascotas-personalizadas" },
 };
 
 export default async function MascotasPersonalizadasPage({

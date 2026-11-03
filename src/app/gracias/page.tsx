@@ -6,6 +6,7 @@ import { getStripe } from "@/lib/stripe";
 
 export const metadata: Metadata = {
   title: "Pedido confirmado — Chamberí 54",
+  robots: { index: false, follow: true },
 };
 
 async function getSessionSummary(sessionId: string | undefined) {

@@ -7,6 +7,7 @@ import CartView from "@/components/cart/CartView";
 export const metadata: Metadata = {
   title: "Tu carrito — Chamberí 54",
   description: "Revisa tus letras de cerámica personalizadas y completa el pago.",
+  robots: { index: false, follow: true },
 };
 
 export default async function CarritoPage({
