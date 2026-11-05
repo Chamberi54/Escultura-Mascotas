@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import DogFooter from "@/components/dog/DogFooter";
 import HomeHero from "@/components/home/HomeHero";
 import FeatureStrip from "@/components/home/FeatureStrip";
+import GoogleReviews from "@/components/home/GoogleReviews";
 import CategoryCard from "@/components/portfolio/CategoryCard";
 import { CATEGORIES } from "@/lib/portfolio";
 
@@ -74,6 +75,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <GoogleReviews />
       </main>
       <DogFooter />
     </>
